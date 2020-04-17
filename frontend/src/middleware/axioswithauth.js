@@ -1,5 +1,5 @@
 import axios from 'axios';
-// waiting on BE URL to fill baseURL: ("");
+// waiting on "BE" URL to fill baseURL: ("");
 export const AxiosWithAuth = () => {
 
   const token = localStorage.getItem('token');
