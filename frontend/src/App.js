@@ -1,16 +1,14 @@
 import React from "react";
-import Nav from "./home-components/nav-drawer";
+import Nav from "./components/Navbar/nav-drawer.js";
+import Login from "./components/Login/SignIn";
 import "./App.css";
-import SignInSignUp from "./components/signin-and-signup/signin-signup";
 
 function App() {
   return (
-    // <div className='App'>
-    //   <header className='App-header'>
-    //     <SignInSignUp />
-    //   </header>
-    // </div>
-    <Nav />
+    <>
+      <Nav />
+      <Login />
+    </>
   );
 }
 
