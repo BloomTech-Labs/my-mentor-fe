@@ -1,17 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from "react";
+import logo from "./logo.svg";
+import Nav from "./home-components/nav-drawer";
 
-import './App.css';
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-      testing HELLO WORLD....
-      </header>
-
-    </div>
-  );
+  return <Nav />;
 }
 
 export default App;
