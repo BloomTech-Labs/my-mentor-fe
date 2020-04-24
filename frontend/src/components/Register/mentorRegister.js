@@ -1,7 +1,5 @@
 import React from "react";
-import { TextField, Button } from "@material-ui/core";
-
-import "./register.scss";
+import TextField from "@material-ui/core/TextField";
 
 class Register extends React.Component {
   constructor() {
@@ -10,10 +8,9 @@ class Register extends React.Component {
     this.state = {
       firstName: "",
       lastName: "",
-      city: "",
-      state: "",
       email: "",
-      industry: "",
+      profession: "",
+      username: "",
       password: "",
       confirmpassword: "",
     };
@@ -24,10 +21,9 @@ class Register extends React.Component {
     this.setState({
       firstName: "",
       lastName: "",
-      city: "",
-      state: "",
       email: "",
-      industry: "",
+      profession: "",
+      username: "",
       password: "",
       confirmPassword: "",
     });
@@ -45,18 +41,17 @@ class Register extends React.Component {
     const {
       firstName,
       lastName,
-      city,
-      state,
       email,
-      industry,
+      profession,
+      username,
       password,
       confirmPassword,
     } = this.state;
     return (
-      <div className='login-register'>
-        <h2 className='title'>Don't have an account?</h2>
+      <div>
+        <h2>Don't have an account?</h2>
         <span>Sign up with your email and password</span>
-        <form className='formInput' onSubmit={this.handleSubmit}>
+        <form>
           <TextField
             type='text'
             name='firstName'
@@ -74,22 +69,6 @@ class Register extends React.Component {
             required
           />
           <TextField
-            type='text'
-            name='city'
-            value={city}
-            onChange={this.handleChange}
-            label='City'
-            required
-          />
-          <TextField
-            type='text'
-            name='state'
-            value={state}
-            onChange={this.handleChange}
-            label='State'
-            required
-          />
-          <TextField
             type='email'
             name='email'
             value={email}
@@ -99,10 +78,18 @@ class Register extends React.Component {
           />
           <TextField
             type='text'
-            name='industry'
-            value={industry}
+            name='profession'
+            value={profession}
+            onChange={this.profession}
+            label='Profession'
+            required
+          />
+          <TextField
+            type='text'
+            name='username'
+            value={username}
             onChange={this.handleChange}
-            label='Industry'
+            label='Username'
             required
           />
           <TextField
@@ -121,7 +108,7 @@ class Register extends React.Component {
             label='Confirm Password'
             required
           />
-          <Button type='submit'>SIGN UP</Button>
+          <button type='submit'>SIGN UP</button>
         </form>
       </div>
     );

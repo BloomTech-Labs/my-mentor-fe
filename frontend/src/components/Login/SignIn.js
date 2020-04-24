@@ -1,4 +1,7 @@
 import React from "react";
+import { Button, TextField } from "@material-ui/core";
+
+import "./siginin.scss";
 
 class SignIn extends React.Component {
   constructor(props) {
@@ -27,12 +30,12 @@ class SignIn extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Already have an account</h2>
+      <div className='login-register'>
+        <h2 className='title'>Already have an account</h2>
         <span>Sign in with email and password</span>
 
-        <form onSubmit={this.handleSubmit}>
-          <input
+        <form className='inputForm' onSubmit={this.handleSubmit}>
+          <TextField
             name='email'
             type='email'
             onChange={this.handleChange}
@@ -40,7 +43,7 @@ class SignIn extends React.Component {
             required
           />
           <label>Email</label>
-          <input
+          <TextField
             name='password'
             type='password'
             onChange={this.handleChange}
@@ -48,7 +51,7 @@ class SignIn extends React.Component {
             required
           />
           <label>Password</label>
-          <input type='submit' value='Submit Form' />
+          <Button type='submit' value='Submit Form' />
         </form>
       </div>
     );
