@@ -3,7 +3,8 @@ import { Route, Switch } from "react-router-dom";
 
 import Nav from "./components/Navbar/nav-drawer.js";
 import Login from "./components/Login/SignIn";
-import Register from "./components/Register/Register";
+import MenteeRegister from "./components/Register/menteeRegister";
+import MentorRegister from "./components/Register/mentorRegister";
 
 import "./App.css";
 
@@ -13,7 +14,8 @@ function App() {
       <Nav />
       <Switch>
         <Route path='/login' component={Login} />
-        <Route path='/register' component={Register} />
+        <Route path='/menteeRegister' component={MenteeRegister} />
+        <Route path='/mentorRegister' component={MentorRegister} />
       </Switch>
     </>
   );

@@ -1,30 +1,34 @@
 import React from "react";
+import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { Button, TextField } from "@material-ui/core";
 
 import "./siginin.scss";
 
 class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
+  state = {
+    credentials: {
       email: "",
       password: "",
-    };
-  }
+    },
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      email: "",
-      password: "",
-    });
+    AxiosWithAuth()
+      .post("/login", this.state.credentials)
+      .then((result) => {
+        localStorage.setItem("token", result.data.payload);
+        this.props.history.push();
+      })
+      .catch((error) => console.log(error));
   };
 
   handleChange = (e) => {
-    const { value, name } = e.target;
     this.setState({
-      [name]: value,
+      credentials: {
+        ...this.state.credentials,
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
@@ -34,12 +38,12 @@ class SignIn extends React.Component {
         <h2 className='title'>Already have an account</h2>
         <span>Sign in with email and password</span>
 
-        <form className='inputForm' onSubmit={this.handleSubmit}>
+        <form className='formInput' onSubmit={this.handleSubmit}>
           <TextField
             name='email'
             type='email'
             onChange={this.handleChange}
-            value={this.state.email}
+            value={this.state.credentials.email}
             required
           />
           <label>Email</label>
@@ -47,7 +51,7 @@ class SignIn extends React.Component {
             name='password'
             type='password'
             onChange={this.handleChange}
-            value={this.state.password}
+            value={this.state.credentials.password}
             required
           />
           <label>Password</label>
