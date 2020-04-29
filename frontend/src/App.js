@@ -1,16 +1,13 @@
 import React from "react";
-import Nav from "./home-components/nav-drawer";
+import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage'
+
 import "./App.css";
-import SignInSignUp from "./components/signin-and-signup/signin-signup";
 
 function App() {
   return (
-    // <div className='App'>
-    //   <header className='App-header'>
-    //     <SignInSignUp />
-    //   </header>
-    // </div>
-    <Nav/>
+    <div>
+      <ProfilePage /> 
+    </div>
   );
 }
 
