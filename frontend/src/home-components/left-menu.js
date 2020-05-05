@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, useHistory } from "react-router-dom";
 import { Menu, Icon } from 'antd';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
@@ -8,7 +9,7 @@ class LeftMenu extends Component {
     return (
    <Menu mode="horizontal">
        <Menu.Item key="mail">
-          <a href="">Home</a>
+          <Link href="" to="/Home">Home</Link>
         </Menu.Item>
         <SubMenu title={<span>Profile</span>}>
           <MenuItemGroup>
