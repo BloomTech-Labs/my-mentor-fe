@@ -1,118 +1,114 @@
-import React from "react";
-import TextField from "@material-ui/core/TextField";
+import React, { useState } from "react";
+import { AxiosWithAuth } from "../../middleware/axioswithauth";
+import { TextField, Button } from "@material-ui/core";
 
-class Register extends React.Component {
-  constructor() {
-    super();
+import "./register.scss";
 
-    this.state = {
-      firstName: "",
-      lastName: "",
-      email: "",
-      profession: "",
-      username: "",
-      password: "",
-      confirmpassword: "",
-    };
-  }
+const initialRegState = {
+  first_name: "",
+  last_name: "",
+  city: "",
+  state: "",
+  profession: "",
+  image: "",
+  email: "",
+  password: "",
+};
 
-  handleSubmit = async (e) => {
+const MentorRegister = (props) => {
+  const [registerData, setRegisterData] = useState(initialRegState);
+  console.log(initialRegState);
+
+  const handleChange = (e) => {
+    setRegisterData({ ...registerData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      profession: "",
-      username: "",
-      password: "",
-      confirmPassword: "",
-    });
+    AxiosWithAuth()
+      .post("/auth/register/mentor", registerData)
+      .then((res) => {
+        console.log(registerData);
+        props.history.push("/mentorLogin");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
-  handleChange = (e) => {
-    const { name, value } = e.target;
+  return (
+    <div className='login-register'>
+      <h2 className='title'>Don't have an account?</h2>
+      <span>Sign up with your email and password</span>
+      <form className='formInput' onSubmit={handleSubmit}>
+        <TextField
+          type='text'
+          name='first_name'
+          value={registerData.first_name}
+          onChange={handleChange}
+          label='First Name'
+          required
+        />
+        <TextField
+          type='text'
+          name='last_name'
+          value={registerData.last_name}
+          onChange={handleChange}
+          label='Last Name'
+          required
+        />
+        <TextField
+          type='text'
+          name='city'
+          value={registerData.city}
+          onChange={handleChange}
+          label='City'
+          required
+        />
+        <TextField
+          type='text'
+          name='state'
+          value={registerData.state}
+          onChange={handleChange}
+          label='State'
+          required
+        />
+        <TextField
+          type='text'
+          name='profession'
+          value={registerData.profession}
+          onChange={handleChange}
+          label='Profession'
+          required
+        />
+        <TextField
+          type='img'
+          name='image'
+          value={registerData.image}
+          onChange={handleChange}
+          label='Image'
+          required
+        />
+        <TextField
+          type='email'
+          name='email'
+          value={registerData.email}
+          onChange={handleChange}
+          label='Email'
+          required
+        />
+        <TextField
+          type='password'
+          name='password'
+          value={registerData.password}
+          onChange={handleChange}
+          label='Password'
+          required
+        />
+        <Button type='submit'>SIGN UP</Button>
+      </form>
+    </div>
+  );
+};
 
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  render() {
-    const {
-      firstName,
-      lastName,
-      email,
-      profession,
-      username,
-      password,
-      confirmPassword,
-    } = this.state;
-    return (
-      <div>
-        <h2>Don't have an account?</h2>
-        <span>Sign up with your email and password</span>
-        <form>
-          <TextField
-            type='text'
-            name='firstName'
-            value={firstName}
-            onChange={this.handleChange}
-            label='First Name'
-            required
-          />
-          <TextField
-            type='text'
-            name='lastName'
-            value={lastName}
-            onChange={this.handleChange}
-            label='Last Name'
-            required
-          />
-          <TextField
-            type='email'
-            name='email'
-            value={email}
-            onChange={this.handleChange}
-            label='Email'
-            required
-          />
-          <TextField
-            type='text'
-            name='profession'
-            value={profession}
-            onChange={this.profession}
-            label='Profession'
-            required
-          />
-          <TextField
-            type='text'
-            name='username'
-            value={username}
-            onChange={this.handleChange}
-            label='Username'
-            required
-          />
-          <TextField
-            type='password'
-            name='password'
-            value={password}
-            onChange={this.handleChange}
-            label='Password'
-            required
-          />
-          <TextField
-            type='password'
-            name='confimPassword'
-            value={confirmPassword}
-            onChange={this.handleChange}
-            label='Confirm Password'
-            required
-          />
-          <button type='submit'>SIGN UP</button>
-        </form>
-      </div>
-    );
-  }
-}
-
-export default Register;
+export default MentorRegister;

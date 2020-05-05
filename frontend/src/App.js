@@ -2,9 +2,12 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Nav from "./components/Navbar/nav-drawer.js";
-import Login from "./components/Login/SignIn";
-import MenteeRegister from "./components/Register/menteeRegister";
-import MentorRegister from "./components/Register/mentorRegister";
+import MenteeLogin from "./components/Login/MenteeLogin";
+import MentorLogin from "./components/Login/MentorLogin";
+import MenteeRegister from "./components/Register/MenteeRegister";
+import MentorRegister from "./components/Register/MentorRegister";
+import Dashboard from "./components/dashboard/dashboard";
+import PrivateRoute from "./middleware/privateRoute";
 
 import "./App.css";
 
@@ -13,9 +16,11 @@ function App() {
     <>
       <Nav />
       <Switch>
-        <Route path='/login' component={Login} />
-        <Route path='/menteeRegister' component={MenteeRegister} />
-        <Route path='/mentorRegister' component={MentorRegister} />
+        <PrivateRoute exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/menteeLogin' component={MenteeLogin} />
+        <Route exact path='/mentorLogin' component={MentorLogin} />
+        <Route exact path='/menteeRegister' component={MenteeRegister} />
+        <Route exact path='/mentorRegister' component={MentorRegister} />
       </Switch>
     </>
   );
