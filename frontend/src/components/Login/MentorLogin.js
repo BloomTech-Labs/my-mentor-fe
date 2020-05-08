@@ -17,15 +17,14 @@ const MentorLogin = (props) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const login = (e) => {
     e.preventDefault();
     AxiosWithAuth()
       .post("/auth/login/mentor", loginData)
       .then((res) => {
-        console.log(loginData);
-
         localStorage.setItem("token", res.data.token);
-        props.history.push("/dashboard");
+        console.log("responding data:", res);
+        this.props.history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -37,7 +36,7 @@ const MentorLogin = (props) => {
       <h2 className='title'>Already have an account</h2>
       <span>Sign in with email and password</span>
 
-      <form className='formInput' onSubmit={handleSubmit}>
+      <form className='formInput' onSubmit={login}>
         <TextField
           name='email'
           type='email'

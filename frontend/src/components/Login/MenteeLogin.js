@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// @ts-ignore
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
 
@@ -35,7 +34,7 @@ const MenteeLogin = (props) => {
       <h2 className='title'>Already have an account</h2>
       <span>Sign in with email and password</span>
 
-      <form className='formInput' onSubmit={this.login}>
+      <form className='formInput' onSubmit={handleSubmit}>
         <TextField
           name='email'
           type='email'
@@ -52,7 +51,7 @@ const MenteeLogin = (props) => {
           required
         />
         <label>Password</label>
-        <Button type='submit' value='Submit Form' />
+        <Button type='submit' value='Submit Form'>Log In</Button>
       </form>
     </div>
   );
