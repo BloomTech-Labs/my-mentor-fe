@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Nav from "./components/Navbar/nav-drawer.js";
 import MenteeLogin from "./components/Login/MenteeLogin";
 import MentorLogin from "./components/Login/MentorLogin";
-import MenteeRegister from "./components/Register/MenteeRegister";
+import MenteeRegister from './components/Register/MenteeRegister';
 import MentorRegister from "./components/Register/MentorRegister";
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
