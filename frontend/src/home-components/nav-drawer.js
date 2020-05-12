@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import LeftMenu from "./left-menu";
 import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
-
+import Searchbar from '../search-bar/searchbox'
 
 class Navbar extends Component {
   state = {
@@ -22,9 +22,10 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="menuBar">
+        <Searchbar /> 
         <div className="logo">
           <a href="">MentorName</a>
-        </div>
+        </div> 
         <div className="menuCon">
           <div className="leftMenu">
             <LeftMenu />
