@@ -8,6 +8,7 @@ import MenteeRegister from './components/Register/MenteeRegister';
 import MentorRegister from "./components/Register/MentorRegister";
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
+import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage'
 
 import "./App.css";
 
@@ -21,6 +22,7 @@ function App() {
         <Route exact path='/mentorLogin' component={MentorLogin} />
         <Route exact path='/menteeRegister' component={MenteeRegister} />
         <Route exact path='/mentorRegister' component={MentorRegister} />
+        <ProfilePage />
       </Switch>
     </>
   );
