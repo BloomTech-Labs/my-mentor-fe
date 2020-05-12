@@ -1,0 +1,14 @@
+.home-div{
+    font-size: 25px;
+    color: aliceblue;
+    background-image: linear-gradient(rgb(88,151,250), white);
+    width: 100%;
+}
+
+.home-header {
+    color: aliceblue;
+}
+
+.home-pic {
+    width: 100%;
+}
