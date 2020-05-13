@@ -1,16 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-
-import './App.css';
+import React from "react";
+import Nav from "./home-components/nav-drawer";
+import "./App.css";
+import SignInSignUp from "./components/signin-and-signup/signin-signup";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      testing HELLO WORLD....
-      </header>
-
-    </div>
+    // <div className='App'>
+    //   <header className='App-header'>
+    //     <SignInSignUp />
+    //   </header>
+    // </div>
+    <Nav/>
   );
 }
 
