@@ -22,7 +22,7 @@ const MenteeLogin = (props) => {
       .post("/auth/login/mentee", loginData)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
-        props.history.push("/dashboard");
+        props.history.push("/dashboardMentee");
       })
       .catch((err) => {
         console.log(err);

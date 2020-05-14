@@ -9,22 +9,26 @@ import MentorRegister from "./components/Register/mentorRegister";
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
 import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage'
+import DashboardMentee from './components/dashboard/DashboardMentee';
 
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Nav>
+      {/* <Nav /> */}
       <Switch>
+        {/* /dashboard for mentor view */}
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
+         {/* /dashboard for mentee view */}
+         <PrivateRoute exact path='/dashboardMentee' component={DashboardMentee} />
         <Route exact path='/menteeLogin' component={MenteeLogin} />
         <Route exact path='/mentorLogin' component={MentorLogin} />
         <Route exact path='/menteeRegister' component={MenteeRegister} />
         <Route exact path='/mentorRegister' component={MentorRegister} />
-        <ProfilePage />
+        <Route exact path='/profilePage' component={ProfilePage} />
+        
       </Switch>
-      </Nav> 
     </>
   );
 }
