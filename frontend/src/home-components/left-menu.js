@@ -9,21 +9,24 @@ class LeftMenu extends Component {
     return (
       <Menu mode='horizontal'>
         <Menu.Item key='mail'>
-          <Link to='/'>Home</Link>
+          <Link to='/profilePage'>Mentor-Profile</Link>
         </Menu.Item>
-        <SubMenu title={<span>Profile</span>}>
+        {/* <Menu.Item key='mailtwo'>
+          <Link to='/'>Mentee-Profile</Link>
+        </Menu.Item> */}
+        {/* <SubMenu title={<span>Profile</span>}>
           <MenuItemGroup>
             <Menu.Item key='setting:1'>Messages</Menu.Item>
             <Menu.Item key='setting:2'>Saved Mentors</Menu.Item>
             <Menu.Item key='setting:3'>something else</Menu.Item>
             <Menu.Item key='setting:4'>something else</Menu.Item>
           </MenuItemGroup>
-        </SubMenu>
+        </SubMenu> */}
         <Menu.Item key='alipay'>
           <a href=''>Feed</a>
         </Menu.Item>
         <Menu.Item key='g1'>
-          <a href=''>Account</a>
+        <Link to='/mentorLogin'>Logout</Link>
         </Menu.Item>
       </Menu>
     );

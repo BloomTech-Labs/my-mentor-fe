@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
+// start testing private route !
 const PrivateRoute = ({ component: Component, ...rest }) => {
   return(
     <Route 
@@ -9,7 +10,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
       if( localStorage.getItem('token')) {
         return <Component /> 
       } else {
-        return <Redirect to='/login' />
+        return <Redirect to='/mentorLogin' />
       }
     }}
     />

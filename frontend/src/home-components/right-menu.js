@@ -9,7 +9,8 @@ class RightMenu extends Component {
     return (
       <Menu mode='horizontal'>
         <Menu.Item key='mail'>
-          <Link to='/login'>Log In</Link>
+          <Link to='/mentorLogin'>Log Out</Link>
+          
         </Menu.Item>
       </Menu>
     );
