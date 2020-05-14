@@ -18,7 +18,7 @@ import "./home-components/home.css";
 function App() {
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <Switch>
         {/* /dashboard for mentor view */}
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
