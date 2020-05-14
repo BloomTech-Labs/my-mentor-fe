@@ -3,6 +3,7 @@ import LeftMenu from "./left-menu";
 import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
 import Searchbar from '../search-bar/searchbox'
+import ProfilePageSample from '../mentorProfile/src/views/ProfilePage/ProfilePage';
 
 class Navbar extends Component {
   state = {
@@ -24,7 +25,7 @@ class Navbar extends Component {
       <nav className="menuBar">
         <Searchbar /> 
         <div className="logo">
-          <a href="">MentorName</a>
+          <a href={ProfilePageSample}>MentorName</a>
         </div> 
         <div className="menuCon">
           <div className="leftMenu">

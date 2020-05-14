@@ -1,25 +1,29 @@
 Arguments: 
+<<<<<<< HEAD
   /usr/local/bin/node /usr/local/Cellar/yarn/1.22.4/libexec/bin/yarn.js install
+=======
+  /usr/local/Cellar/node/13.3.0/bin/node /usr/local/Cellar/yarn/1.21.1/libexec/bin/yarn.js start
+>>>>>>> 390178e4261e418ca72697655d1aba8bcdf2cbf6
 
 PATH: 
-  /usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
-  1.22.4
+  1.21.1
 
 Node version: 
-  13.9.0
+  13.3.0
 
 Platform: 
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/Daleys/Documents/Lambda/my-mentor-fe/frontend/package.json: Unexpected token < in JSON at position 480
+  SyntaxError: /Users/tonidarden/github/git/labs/my-mentor-fe/frontend/package.json: Unexpected token < in JSON at position 480
       at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:1625:59
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:1625:59
       at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:310:30)
-      at /usr/local/Cellar/yarn/1.22.4/libexec/lib/cli.js:321:13
+      at step (/usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.21.1/libexec/lib/cli.js:321:13
 
 npm manifest: 
   {

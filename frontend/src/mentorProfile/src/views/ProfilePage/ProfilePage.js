@@ -47,7 +47,7 @@ export default function ProfilePage(props) {
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   return (
     <div>
-      <MentorHeader />
+      {/* <MentorHeader /> */}
       <Parallax
         small
         filter
