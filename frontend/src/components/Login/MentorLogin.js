@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
 
+//added by hector
+import { connect } from "react-redux";
+
 import "./siginin.scss";
 
 const initialLoginState = {
@@ -59,4 +62,13 @@ const MentorLogin = (props) => {
   );
 };
 
-export default MentorLogin;
+//added by hector
+const mapStateToProps = state => {
+  return {
+    isAuthenticating: state.isAuthenticating,
+    loggedIn: state.loggedIn,
+    authenticationError: state.authenticationError
+  };
+};
+
+export default connect( mapStateToProps, { MentorLogin } )

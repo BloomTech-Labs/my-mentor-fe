@@ -15,7 +15,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <Nav>
+      <Nav/>
       <Switch>
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
         <Route exact path='/menteeLogin' component={MenteeLogin} />
@@ -24,7 +24,6 @@ function App() {
         <Route exact path='/mentorRegister' component={MentorRegister} />
         <ProfilePage />
       </Switch>
-      </Nav> 
     </>
   );
 }
