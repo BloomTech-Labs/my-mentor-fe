@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-
+import Dashboard from '../components/dashboard/dashboard'
 import LeftMenu from "./left-menu";
 import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
@@ -29,7 +29,7 @@ class Navbar extends Component {
       <nav className="menuBar">
         <Searchbar /> 
         <div className="logo">
-          <Link to="/dashboard">MentorName</Link>
+          <Link to="/">MentorName</Link>
         </div> 
         <div className="menuCon">
           <div className="leftMenu">

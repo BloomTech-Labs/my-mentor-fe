@@ -2,14 +2,14 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Nav from "./home-components/nav-drawer.js";
-// import MenteeLogin from "./components/Login/MenteeLogin";
+import MenteeLogin from "./components/Login/MenteeLogin";
 import MentorLogin from "./components/Login/MentorLogin";
-// import MenteeRegister from './components/Register/menteeRegister';
+import MenteeRegister from './components/Register/menteeRegister';
 import MentorRegister from "./components/Register/mentorRegister";
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
 import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage'
-// import DashboardMentee from './components/dashboard/DashboardMentee';
+import DashboardMentee from './components/dashboard/DashboardMentee';
 import Home from "./home-components/Home";
 
 import "./App.css";

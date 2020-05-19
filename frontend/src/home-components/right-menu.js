@@ -9,24 +9,16 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 class RightMenu extends Component {
+  handleLogout = () => {
+    localStorage.removeItem('token');
+  }
   render() {
     const { dispatch, isAuthenticated, errorMessage } = this.props
     return (
       <Menu mode='horizontal'>
         <Menu.Item key='mail'>
-          {/* <Link to='/mentorLogin' >Log Out</Link> */}
-          {!isAuthenticated &&
-              <Login
-                errorMessage={errorMessage}
-                onLoginClick={ creds => dispatch(loginUser(creds)) }
-              />
-            }
-        </Menu.Item>
-        <Menu.Item key='mail'>
-          {/* <Link to='/mentorLogin'>Log In</Link> */}
-          {isAuthenticated &&
-              <Logout onLogoutClick={() => dispatch(logoutUser())} />
-            }
+          <Link to='/mentorLogin' onClick={this.handleLogout}>Log Out</Link>
+          
         </Menu.Item>
       </Menu>
     );
