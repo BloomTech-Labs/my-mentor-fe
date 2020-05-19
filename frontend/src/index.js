@@ -6,15 +6,26 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
-import store from "./redux/store";
+// import store from "./redux/store";
 
-ReactDOM.render(
+
+import { render } from 'react-dom'
+import { createStore, applyMiddleware } from 'redux'
+import mentorApp from './redux/reducer/reducer';
+import thunkMiddleware from 'redux-thunk'
+import axiosWithAuth from './middleware/axioswithauth';
+
+let createStoreWithMiddleware = applyMiddleware(thunkMiddleware, axiosWithAuth)(createStore)
+
+let store = createStoreWithMiddleware(mentorApp)
+
+let rootElement = document.getElementById('root')
+
+render(
   <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById("root")
+  <App />
+</Provider>,
+rootElement
 );
 
 // If you want your app to work offline and load faster, you can change

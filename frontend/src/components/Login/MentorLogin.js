@@ -24,7 +24,7 @@ const MentorLogin = (props) => {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         console.log("responding data:", res);
-        props.history.push("/dashboard");
+        this.props.history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -33,7 +33,6 @@ const MentorLogin = (props) => {
 
   return (
     <div className='login-register'>
-      <h1>Welcome back Mentor </h1> 
       <h2 className='title'>Already have an account</h2>
       <span>Sign in with email and password</span>
 

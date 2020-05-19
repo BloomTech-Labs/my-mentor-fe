@@ -1,4 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from 'react'
+
+
 import LeftMenu from "./left-menu";
 import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
@@ -22,6 +24,7 @@ class Navbar extends Component {
     });
   };
   render() {
+  
     return (
       <nav className="menuBar">
         <Searchbar /> 
