@@ -1,10 +1,12 @@
 import React from "react";
 import "./home.css"
+import Nav from '../home-components/nav-drawer'
 
 
 export default function Home() {
     return (
         <div>
+            <Nav /> 
             <div className="home-div">
                 <h1 className="home-header">Connect to your future, rewrite the past</h1>
                 <p>Search for mentors</p>

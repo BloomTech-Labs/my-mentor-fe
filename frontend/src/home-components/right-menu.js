@@ -1,4 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from 'react'
+import Login from '../components/Login/MentorLogin';
+import Logout from '../components/Logout/mentorLogout';
+import { loginUser, logoutUser } from '../redux/actions/index';
+
 import { Link } from "react-router-dom";
 import { Menu } from "antd";
 const SubMenu = Menu.SubMenu;
@@ -9,6 +13,7 @@ class RightMenu extends Component {
     localStorage.removeItem('token');
   }
   render() {
+    const { dispatch, isAuthenticated, errorMessage } = this.props
     return (
       <Menu mode='horizontal'>
         <Menu.Item key='mail'>
