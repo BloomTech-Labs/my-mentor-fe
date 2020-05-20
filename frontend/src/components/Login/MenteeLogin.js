@@ -19,7 +19,7 @@ const MenteeLogin = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     AxiosWithAuth()
-      .post("/auth/login/mentee", loginData)
+      .post("/api/auth/login/mentee", loginData)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         props.history.push("/dashboardMentee");

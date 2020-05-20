@@ -1,6 +1,6 @@
 import React from "react";
-// import Nav from '../../home-components/nav-drawer'
+import Nav from '../../mentee/menteeNav';
 
-function DashboardMentee() {return (<div> <h1>This is the Dashboard for Mentees</h1></div>)};
+function DashboardMentee() {return (<div><Nav />  <h1>This is the Dashboard for Mentees</h1></div>)};
 
 export default DashboardMentee;

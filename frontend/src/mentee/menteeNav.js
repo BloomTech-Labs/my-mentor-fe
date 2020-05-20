@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 
-import Dashboard from '../components/dashboard/dashboard'
+import Dashboard from '../components/dashboard/DashboardMentee';
 import LeftMenu from "./left-menu";
 import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
 import Searchbar from '../search-bar/searchbox'
-import ProfilePageSample from '../mentorProfile/src/views/ProfilePage/ProfilePage';
+import ProfilePageSample from './ProfilePage';
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {
