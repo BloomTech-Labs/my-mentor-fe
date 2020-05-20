@@ -71,4 +71,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect( mapStateToProps, { MentorLogin } )
+export default connect( mapStateToProps, {})(MentorLogin)
