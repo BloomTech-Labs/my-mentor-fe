@@ -34,9 +34,12 @@ import dale from "../../assets/img/examples/dale.jpg";
 
 import styles from "../../assets/jss/material-kit-react/views/profilePage.js";
 
+//added by hector
+import { connect } from "react-redux";
+
 const useStyles = makeStyles(styles);
 
-export default function ProfilePage(props) {
+function ProfilePage(props) {
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -291,3 +294,5 @@ export default function ProfilePage(props) {
     </div>
   );
 }
+
+export default ProfilePage;
