@@ -26,10 +26,10 @@ class LeftMenu extends Component {
           </MenuItemGroup>
         </SubMenu> */}
         <Menu.Item key='alipay'>
-          <a href=''>Feed</a>
+          <Link to='/dashboard'>Dashboard</Link>
         </Menu.Item>
         <Menu.Item key='g1'>
-        <Link to='/mentorLogin' onClick={this.handleLogout}>Logout</Link>
+        <Link to='/mentorLogin'>Logout</Link>
         </Menu.Item>
       </Menu>
     );
