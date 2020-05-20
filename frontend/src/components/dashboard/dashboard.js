@@ -15,9 +15,5 @@ function Dashboard(props) {
     )
 };
 
-const mapStateToProps = state => {
-    return {
-        data: state.data
-    }
-}
+
 export default Dashboard;
