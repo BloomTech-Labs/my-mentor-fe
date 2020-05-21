@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import Login from '../components/Login/MentorLogin';
-import Logout from '../components/Logout/mentorLogout';
+
 import { loginUser, logoutUser } from '../redux/actions/index';
 
 import { Link } from "react-router-dom";

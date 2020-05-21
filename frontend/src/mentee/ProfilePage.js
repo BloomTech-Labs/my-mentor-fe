@@ -16,6 +16,7 @@ import GridItem from "../mentorProfile/src/components/Grid/GridItem";
 import HeaderLinks from "../mentorProfile/src/components/Header/HeaderLinks";
 import NavPills from "../mentorProfile/src/components/NavPills/NavPills";
 import Parallax from "../mentorProfile/src/components/Parallax/Parallax";
+import ImageLoader from './imageLoader';
 
 import profile from "../mentorProfile/src/assets/img/faces/kendall.jpg";
 //assets/img/faces/kendall.jpg"
@@ -25,10 +26,17 @@ import aboutme from "../mentorProfile/src/assets/img/examples/studio-5.jpg";
 // studio-5.jpg
 //
 
+
 import styles from "../mentorProfile/src/assets/jss/material-kit-react/views/profilePage";
 const useStyles = makeStyles(styles);
 
 export default function MenteeProfilePage(props) {
+
+    function handleClick(e) {
+        e.preventDefault();
+        console.log('hello clicked')
+      }
+
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -53,6 +61,7 @@ export default function MenteeProfilePage(props) {
                 <div className={classes.profile}>
                   <div>
                     <img src={profile} alt="..." className={imageClasses} />
+                   
                   </div>
                   <div className={classes.name}>
                     <h3 className={classes.title}>Jasmine Tiber</h3>
@@ -188,7 +197,8 @@ export default function MenteeProfilePage(props) {
                 />
               </GridItem>
             </GridContainer>
-            <Button>Edit Profile</Button>
+            <Button>Edit Profile</Button>  
+            {/* <Button onClick={ () => { Actions.profileEdit(); } }>Edit Profile</Button> */}
           </div>
         </div>
       </div>

@@ -6,7 +6,6 @@ import MenteeLogin from "./components/Login/MenteeLogin";
 import MentorLogin from "./components/Login/MentorLogin";
 import MenteeRegister from './components/Register/menteeRegister';
 import MentorRegister from "./components/Register/mentorRegister";
-import MentorLogout from './components/Logout/mentorLogout'
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
 import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage'
