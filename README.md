@@ -1,16 +1,9 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
 #  The Mentor Connector
 
 You can find the deployed project at www.theMentorConnector.net.
 
 ##  Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
 |                                       [Miley Wright](https://github.com/MileyWright)                                        |                                       [Toni Darden](https://github.com/Toniddarden)                                        |                                       [Chris Shockley](https://github.com/cishocksr)                                        |                                       [Hector Valdez](https://github.com/Haloking1212)                                        |                                       [Chris Daley](https://github.com/ShakeyFries)                                                               |                                      
 | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
@@ -21,7 +14,6 @@ You can find the deployed project at www.theMentorConnector.net.
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
@@ -30,7 +22,6 @@ You can find the deployed project at www.theMentorConnector.net.
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Maintainability](https://api.codeclimate.com/v1/badges/78f77fa93f7d4496e028/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/my-mentor-fe/maintainability)
 
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
@@ -39,12 +30,8 @@ You can find the deployed project at www.theMentorConnector.net.
 [Product Canvas](ion.so/My-Mentor-f22420a3d843446cb185aed1c4dbce83)
 
 
-🚫 Replace lorem ipsum with a description of your project
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+Conecting mentore to recent graduates across disciplins for mentoring opportunities. Mentee's can choose between a mentor's based upon profession, alma matar, or location.
 
 ### 4️⃣ Key Features
 
