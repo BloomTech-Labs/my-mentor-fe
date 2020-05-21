@@ -29,7 +29,7 @@ class LeftMenu extends Component {
           <Link to='/dashboard'>Dashboard</Link>
         </Menu.Item>
         <Menu.Item key='g1'>
-        <Link to='/mentorLogin'>Logout</Link>
+          <Link to='/mentorLogin'>Login</Link>
         </Menu.Item>
       </Menu>
     );
