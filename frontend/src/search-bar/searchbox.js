@@ -21,3 +21,25 @@ export default function SearchBarBasic() {
     </form>
   );
 }
+
+// render () { 
+  // let filteredContact = this.props.mentors.filter(
+  //   (mentor) => {
+  //     return mentor.name.toLowerCase().indexOf(
+  //       this.state.search.toLowerCase()) !== -1;
+  //   }
+  // );
+  // return (
+  //   <div>
+  //     <ul>
+  //       {filteredContact.map((mentor) => {
+  //         return 
+  //           <Mentor 
+  //             mentor={mentor}
+  //             key={mentor.id}
+  //             />
+  //       })}
+  //     </ul>
+  //   </div>
+  // )
+// }
