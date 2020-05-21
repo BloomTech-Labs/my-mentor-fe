@@ -26,7 +26,7 @@ class LeftMenu extends Component {
           <a href=''>Feed</a>
         </Menu.Item>
         <Menu.Item key='g1'>
-        <Link to='/mentorLogin'>Logout</Link>
+          <Link to='/mentorLogin'>Login</Link>
         </Menu.Item>
       </Menu>
     );

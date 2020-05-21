@@ -32,6 +32,7 @@ const MentorRegister = (props) => {
     AxiosWithAuth()
       .post("/auth/register/mentor", registerData)
       .then((res) => {
+        console.log(registerData)
         setIsLoading(false)
         setRegisterData(initialRegState)
         props.history.push("/mentorLogin");
