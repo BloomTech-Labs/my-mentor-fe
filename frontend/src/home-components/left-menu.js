@@ -5,6 +5,9 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 class LeftMenu extends Component {
+  handleLogout = () => {
+    localStorage.removeItem('token');
+  }
   render() {
     return (
       <Menu mode='horizontal'>
@@ -23,7 +26,7 @@ class LeftMenu extends Component {
           </MenuItemGroup>
         </SubMenu> */}
         <Menu.Item key='alipay'>
-          <a href=''>Feed</a>
+          <Link to='/dashboard'>Dashboard</Link>
         </Menu.Item>
         <Menu.Item key='g1'>
           <Link to='/mentorLogin'>Login</Link>

@@ -6,6 +6,7 @@ import MenteeLogin from "./components/Login/MenteeLogin";
 import MentorLogin from "./components/Login/MentorLogin";
 import MenteeRegister from './components/Register/menteeRegister';
 import MentorRegister from "./components/Register/mentorRegister";
+import MentorLogout from './components/Logout/mentorLogout'
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
 import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage'
@@ -14,15 +15,13 @@ import Home from "./home-components/Home";
 
 import "./App.css";
 import "./home-components/home.css";
+import MenteeProfilePage from "./mentee/ProfilePage";
 
 function App() {
   return (
     <>
-      <Nav />
       <Switch>
-        {/* /dashboard for mentor view */}
         <PrivateRoute exact path='/dashboard' component={Dashboard} />
-         {/* /dashboard for mentee view */}
          <PrivateRoute exact path='/dashboardMentee' component={DashboardMentee} />
         <Route exact path='/' component={Home} />
         <Route exact path='/menteeLogin' component={MenteeLogin} />
@@ -30,6 +29,8 @@ function App() {
         <Route exact path='/menteeRegister' component={MenteeRegister} />
         <Route exact path='/mentorRegister' component={MentorRegister} />
         <Route exact path='/profilePage' component={ProfilePage} />
+
+        <Route exact path='/menteeProfilePage' component={MenteeProfilePage} />
         
       </Switch>
     </>
