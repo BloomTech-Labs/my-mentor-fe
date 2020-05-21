@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "../mentorProfile/src/components/CustomButtons/Button";
 
 export default function Home() {
+
   return (
     <div>
       {/* <Nav /> replace with dynamic routes for mentor/mentee */}
@@ -24,10 +25,11 @@ export default function Home() {
         <p>Be apart of a community</p>
         <img
           className="home-pic"
-          src={require("./photos/joshua-unsplash.jpg")}
+          src={("./photos/joshua-unsplash.jpg")}
           alt="Mentor and Mentee drinking coffee"
         />
       </div>
     </div>
   );
 }
+

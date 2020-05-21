@@ -33,6 +33,7 @@ const MenteeRegister = (props) => {
       .post("/auth/register/mentee", registerData)
       .then((res) => {
         setIsLoading(false)
+        console.log(registerData);
         setRegisterData(initialRegState)
         props.history.push("/menteeLogin");
       })
