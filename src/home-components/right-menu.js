@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react'
 import Login from '../components/Login/MentorLogin';
-import Logout from '../components/Logout/mentorLogout';
 import { loginUser, logoutUser } from '../redux/actions/index';
 
 import { Link } from "react-router-dom";
@@ -18,7 +17,7 @@ class RightMenu extends Component {
       <Menu mode='horizontal'>
         <Menu.Item key='mail'>
           <Link to='/mentorLogin' onClick={this.handleLogout}>Log Out</Link>
-          
+
         </Menu.Item>
       </Menu>
     );

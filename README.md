@@ -21,7 +21,7 @@ You can find the deployed project at www.theMentorConnector.net.
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Maintainability](https://api.codeclimate.com/v1/badges/78f77fa93f7d4496e028/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/my-mentor-fe/maintainability)
-
+[![Test Coverage](https://api.codeclimate.com/v1/badges/78f77fa93f7d4496e028/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/my-mentor-fe/test_coverage)
 
 ## Project Overview
 

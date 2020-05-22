@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// @ts-ignore
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
 
