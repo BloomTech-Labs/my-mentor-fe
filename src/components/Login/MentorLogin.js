@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom'
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
+
 
 import "./siginin.scss";
 
@@ -53,7 +55,7 @@ const MentorLogin = (props) => {
         />
         <label>Password</label>
         <Button type='submit' value='Submit Form'>Log In</Button>
-        <Button>Register</Button>
+        <Button><Link>Register</Link></Button>
       </form>
     </div>
   );
