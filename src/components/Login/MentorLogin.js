@@ -53,6 +53,7 @@ const MentorLogin = (props) => {
         />
         <label>Password</label>
         <Button type='submit' value='Submit Form'>Log In</Button>
+        <Button>Register</Button>
       </form>
     </div>
   );
