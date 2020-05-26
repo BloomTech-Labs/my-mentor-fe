@@ -1,6 +1,17 @@
 import React from "react";
-import Nav from '../../mentee/menteeNav';
+import { connect } from 'react-redux';
+import Nav from '../../home-components/nav-drawer';
+import UserInfoMentee from './userInfoMentee.js';
 
-function DashboardMentee() {return (<div><Nav />  <h1>This is the Dashboard for Mentees</h1></div>)};
+
+function DashboardMentee(props) {
+
+    return (
+        <div>  
+            <Nav />
+            <UserInfoMentee />
+        </div>
+    )
+};
 
 export default DashboardMentee;

@@ -4,7 +4,7 @@ import { FormOutlined } from '@ant-design/icons';
 const { Meta } = Card;
 
 
-const UserInfo = () => {
+const UserInfoMentee = () => {
    
     return(
         <Layout>
@@ -30,8 +30,8 @@ const UserInfo = () => {
                             </Card>
                         </Col>
                         <Col gutter={10}xs={20} sm={12} md={12} lg={10} >
-                            <Card style={{height: 400}} title="Mentees" bordered={false}>
-                            Mentees subscribed to content here
+                            <Card style={{height: 400}} title="Mentors" bordered={false}>
+                            Mentor subscribed to content here
                             </Card>
                         </Col>
                         </Row>
@@ -41,4 +41,4 @@ const UserInfo = () => {
     )
 };
 
-export default UserInfo;
+export default UserInfoMentee;
