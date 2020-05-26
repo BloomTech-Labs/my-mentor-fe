@@ -1,0 +1,15 @@
+.login-register {
+  width: 600px;
+  margin: 30px auto;
+}
+
+.formInput {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 300px;
+
+  .title {
+    margin: 10px 0;
+  }
+}
