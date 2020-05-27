@@ -5,8 +5,7 @@ import UserInfo from './userInfo.js';
 
 
 function Dashboard(props) {
-    console.log(props.getMentorData)
-    console.log(props.data)
+
     return (
         <div>  
             <Nav />
@@ -14,6 +13,5 @@ function Dashboard(props) {
         </div>
     )
 };
-
 
 export default Dashboard;
