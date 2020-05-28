@@ -3,6 +3,7 @@ import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
 
 import "./siginin.scss";
+import { Link } from "react-router-dom";
 
 const initialLoginState = {
   email: "",
@@ -52,6 +53,9 @@ const MenteeLogin = (props) => {
         />
         <label>Password</label>
         <Button type='submit' value='Submit Form'>Log In</Button>
+        <Button>
+          <Link to='/menteeRegister'>Register</Link>
+        </Button>
       </form>
     </div>
   );
