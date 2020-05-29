@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import AxioWithAuth from '../../middleware/axioswithauth';
+import axios from 'axios';
+import './browseMentor.css';
 import Nav from '../../home-components/nav-drawer';
+import Mentor from './mentor';
 
 function BrowseMentor() {
     const [mentor, setMentor] = useState([]);
@@ -8,22 +10,44 @@ function BrowseMentor() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        AxiosWithAuth()
-        .get('/mentor')
+        axios
+        .get('https://mentor-be.herokuapp.com/api/mentor',{headers: {Authorization: localStorage.getItem('token')}})
         .then(res => {
-        const mentors = res.data.filter(char => {
+           
+        const mentors = res.data.filter(char => (
             char.first_name.toLowerCase().includes(query.toLowerCase())
-        });
+        ));
         console.log(res.data)
         setMentor(mentors);
         })
     }, [query]);
+    var x = localStorage.getItem('token')
+    console.log(x, 'this is the token')
     return(
         <div>
             <Nav />
-            <h4>
+            <h3 className='header'>
               Find your Mentor  
-            </h4>
+            </h3>
+            <div className='gridContainer'>
+                {mentor.length > 0 ? (
+                    mentor.map(mentor => (
+                    <Mentor
+                        key={mentor.first_name}
+                        firstname={mentor.first_name}
+                        lastname={mentor.last_name}
+                        city={mentor.city}
+                        state={mentor.state}
+                        image={mentor.image}
+                        profession={mentor.profession}
+                    />
+                    ))
+                ) : (
+                    <div>
+                        No Results
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
