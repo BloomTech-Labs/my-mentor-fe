@@ -4,11 +4,11 @@ import './browseMentor.css';
 const Mentor = (props) => {
     return(
         <div className='gridContainer1'>
-            <img alt={props.first_name} src={props.image} />
+            <img alt={props.mentor.first_name} src={props.mentor.image} />
             <div className='userInfo'> 
-                {props.firstname} {props.lastname} <br/>
-                {props.profession} <br/>
-                {props.city}, {props.state}
+                {props.mentor.first_name} {props.mentor.last_name} <br/>
+                {props.mentor.profession} <br/>
+                {props.mentor.city}, {props.mentor.state}
             </div>
         </div>
     )

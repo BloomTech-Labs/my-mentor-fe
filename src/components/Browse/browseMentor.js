@@ -20,6 +20,10 @@ function BrowseMentor() {
         setMentor(mentors);
         })
     }, [query]);
+
+    const handleChange = event => {
+        setQuery(event.target.value)
+    };
     var x = localStorage.getItem('token')
     console.log(x, 'this is the token')
     return(
@@ -28,7 +32,7 @@ function BrowseMentor() {
             <h3 className='header'>
               Find your Mentor  
             </h3>
-            <div> <Filter mentor={mentor}/> </div>
+            <div> <Filter mentor={mentor} query={query} handleChange={handleChange} /> </div>
         </div>
     )
 }
