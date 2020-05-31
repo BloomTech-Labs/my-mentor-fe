@@ -14,7 +14,7 @@ function BrowseMentor() {
         .then(res => {
            
         const mentors = res.data.filter(char => (
-            char.first_name.toLowerCase().includes(query.toLowerCase())
+            char.first_name.toLowerCase().includes(query.toLowerCase()) || char.state.toLowerCase().includes(query.toLowerCase())
         ));
         console.log(res.data)
         setMentor(mentors);
