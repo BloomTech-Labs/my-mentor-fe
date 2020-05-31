@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import './browseMentor.css';
 import Nav from '../../home-components/nav-drawer';
-import Mentor from './mentor';
-
+import Filter from './filter';
+import "./browseMentor.css";
 function BrowseMentor() {
     const [mentor, setMentor] = useState([]);
     const [query, setQuery] = useState('');
@@ -29,25 +28,7 @@ function BrowseMentor() {
             <h3 className='header'>
               Find your Mentor  
             </h3>
-            <div className='gridContainer'>
-                {mentor.length > 0 ? (
-                    mentor.map(mentor => (
-                    <Mentor
-                        key={mentor.first_name}
-                        firstname={mentor.first_name}
-                        lastname={mentor.last_name}
-                        city={mentor.city}
-                        state={mentor.state}
-                        image={mentor.image}
-                        profession={mentor.profession}
-                    />
-                    ))
-                ) : (
-                    <div>
-                        No Results
-                    </div>
-                )}
-            </div>
+            <div> <Filter mentor={mentor}/> </div>
         </div>
     )
 }
