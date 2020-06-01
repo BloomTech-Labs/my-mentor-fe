@@ -12,11 +12,9 @@ function BrowseMentor() {
         axios
         .get('https://mentor-be.herokuapp.com/api/mentor',{headers: {Authorization: localStorage.getItem('token')}})
         .then(res => {
-           
         const mentors = res.data.filter(char => (
             char.first_name.toLowerCase().includes(query.toLowerCase()) || char.state.toLowerCase().includes(query.toLowerCase())
         ));
-        console.log(res.data)
         setMentor(mentors);
         })
     }, [query]);
@@ -24,8 +22,6 @@ function BrowseMentor() {
     const handleChange = event => {
         setQuery(event.target.value)
     };
-    var x = localStorage.getItem('token')
-    console.log(x, 'this is the token')
     return(
         <div>
             <Nav />

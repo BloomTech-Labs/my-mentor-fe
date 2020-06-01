@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Drawer, Input } from 'antd';
 import Mentor from './mentor';
+import './browseMentor.css';
 
 const { Search } = Input;
 const Filter = (props) => {
@@ -13,25 +14,29 @@ const Filter = (props) => {
   const onClose = () => {
     setVisible(false);
   };
-console.log(props.query)
   return (
     <>
       <div className='filterbutton' onClick={showDrawer}>
-        Filter
+        FILTER
       </div>
       <Drawer
-        title="Filter"
+        className='filter'
+        title="FILTER"
         placement="right"
         closable={false}
         onClose={onClose}
         visible={visible}
       >
-        <p>
-        <Search placeholder="search by name"  value={props.query} onChange={props.handleChange} enterButton />
+        <br/>
+        <br/>
+        <p className='search'>
+        <Search  placeholder="search by name"  value={props.query} onChange={props.handleChange} enterButton />
         </p>
+        <br/>
         <div>
-          <form action="./" method="GET"  >
-            <select name="state"  onChange={props.handleChange}>
+          <form action="./" method="GET" className='stateContainer'  >
+            <select className='stateForm' name="state" value={props.query} onChange={props.handleChange}>
+              <option> Select a state </option>
               <option value="Alabama">Alabama</option>
               <option value="Alaska">Alaska</option>
               <option value="Arizona">Arizona</option>
@@ -63,26 +68,26 @@ console.log(props.query)
               <option value="Nevada">Nevada</option>
               <option value="New Hampshire">New Hampshire</option>
               <option value="New Jersey">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NY">New York</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR">Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VT">Vermont</option>
-              <option value="VA">Virginia</option>
-              <option value="WA">Washington</option>
-              <option value="WV">West Virginia</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WY">Wyoming</option>
+              <option value="New Mexico">New Mexico</option>
+              <option value="New York">New York</option>
+              <option value="North Carolina">North Carolina</option>
+              <option value="North Dakota">North Dakota</option>
+              <option value="Ohio">Ohio</option>
+              <option value="Oklahoma">Oklahoma</option>
+              <option value="Oregon">Oregon</option>
+              <option value="Pennsylvania">Pennsylvania</option>
+              <option value="Rhode Island">Rhode Island</option>
+              <option value="South Carolina">South Carolina</option>
+              <option value="South Dakota">South Dakota</option>
+              <option value="Tennessee">Tennessee</option>
+              <option value="Texas">Texas</option>
+              <option value="Utah">Utah</option>
+              <option value="Vermont">Vermont</option>
+              <option value="Virginia">Virginia</option>
+              <option value="Washington">Washington</option>
+              <option value="West Virginia">West Virginia</option>
+              <option value="Wisconsin">Wisconsin</option>
+              <option value="Wyoming">Wyoming</option>
             </select>
           </form>
         </div>

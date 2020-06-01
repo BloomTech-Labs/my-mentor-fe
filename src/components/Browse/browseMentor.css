@@ -4,8 +4,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
 }
-.gridContainer{ background:pink;
+.gridContainer{
     display:flex;
     flex-wrap: wrap;
     margin: 1%;
@@ -14,7 +15,7 @@
     width: 200px;
     height: 300px;
 }
-.gridContainer1{ background: red;
+.gridContainer1{
     position: relative;
     text-align: center;
     color: white;
@@ -25,6 +26,42 @@
     top: 70%;
     left: 25%;
     line-height: 18px;
+}
+.filterbutton{
+    text-align: right;
+    padding-right: 50px;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+.search{
+    width: 90%;
+    padding-left: 25px;
+}
+.stateContainer{
+    display: flex;
+    justify-content: center;
+}
+.stateForm{
+    width: 80%;
+    height: 30px;
+    border-color: #d9d9d9;
+    border-radius: 2px;
+    box-shadow: 0 0 3px .1px #d9d9d9;
+}
+.stateForm:focus{
+    outline: none !important;
+    border: 1px solid  #2196f3;
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
+.stateForm option:hover{
+    border: 1px solid  #2196f3 !important;
+
+}
+.stateForm option:focus {
+    outline: none !important;
+    border: 1px solid  #2196f3 !important;
 }
 @media only screen and (max-width:500px) {
     .gridContainer{
