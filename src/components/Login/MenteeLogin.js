@@ -15,6 +15,8 @@ const MenteeLogin = (props) => {
 
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    localStorage.setItem("email", loginData.email);
+
   };
 
   const handleSubmit = (e) => {
@@ -23,6 +25,7 @@ const MenteeLogin = (props) => {
       .post("/auth/login/mentee", loginData)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("email", loginData.email);
         console.log(res)
         props.history.push("/dashboardMentee");
       })
