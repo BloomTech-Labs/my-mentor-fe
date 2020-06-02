@@ -8,9 +8,10 @@ import MenteeRegister from './components/Register/menteeRegister';
 import MentorRegister from "./components/Register/mentorRegister";
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
-import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage'
+import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage';
 import DashboardMentee from './components/dashboard/DashboardMentee';
 import Home from "./home-components/Home";
+import browseMentor from './components/Browse/browseMentor';
 
 import "./App.css";
 import "./home-components/home.css";
@@ -28,9 +29,8 @@ function App() {
         <Route exact path='/menteeRegister' component={MenteeRegister} />
         <Route exact path='/mentorRegister' component={MentorRegister} />
         <Route exact path='/profilePage' component={ProfilePage} />
-
         <Route exact path='/menteeProfilePage' component={MenteeProfilePage} />
-
+        <Route exact path='/browsementor' component={browseMentor} />
       </Switch>
     </>
   );
