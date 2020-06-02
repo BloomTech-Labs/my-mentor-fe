@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom'
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
@@ -13,9 +13,10 @@ const initialLoginState = {
 
 const MentorLogin = (props) => {
   const [loginData, setLoginData] = useState(initialLoginState);
-
+  
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    localStorage.setItem("email", loginData.email);
   };
 
   const login = (e) => {
@@ -23,9 +24,11 @@ const MentorLogin = (props) => {
     AxiosWithAuth()
       .post("/auth/login/mentor", loginData)
       .then((res) => {
+        localStorage.setItem("email", loginData.email);
         localStorage.setItem("token", res.data.token);
+        
         console.log("responding data:", res);
-        props.history.push("/dashboard");
+        props.history.push(`/dashboard/`);
       })
       .catch((err) => {
         console.log(err);

@@ -4,8 +4,8 @@ import { FormOutlined } from '@ant-design/icons';
 const { Meta } = Card;
 
 
-const UserInfo = () => {
-   
+const UserInfo = (props) => {
+   console.log(props.currentUser)
     return(
         <Layout>
             <Row flex="auto" justify="center">
@@ -13,12 +13,12 @@ const UserInfo = () => {
                     <Card
                         hoverable
                         style={{ width: 240 }}
-                        cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                        cover={<img alt="example" src={props.currentUser.image}/>}
                     >
-                        <Meta title="Alisha Hickson"/>
+                        <Meta title={props.currentUser.first_name}/>
                         <p>
-                            Fashion Designer <FormOutlined /> <br/>
-                            Duluth, GA <FormOutlined /> 
+                            {props.currentUser.profession} <FormOutlined /> <br/>
+                            {props.currentUser.city} {props.currentUser.state} <FormOutlined /> 
                         </p>
                     </Card>
                 </Col>

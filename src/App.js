@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import Nav from "./home-components/nav-drawer.js";
 import MenteeLogin from "./components/Login/MenteeLogin";
 import MentorLogin from "./components/Login/MentorLogin";
 import MenteeRegister from './components/Register/menteeRegister';
@@ -12,16 +11,16 @@ import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage';
 import DashboardMentee from './components/dashboard/DashboardMentee';
 import Home from "./home-components/Home";
 import browseMentor from './components/Browse/browseMentor';
-
 import "./App.css";
 import "./home-components/home.css";
 import MenteeProfilePage from "./mentee/ProfilePage";
 
 function App() {
+ 
   return (
     <>
       <Switch>
-        <PrivateRoute exact path='/dashboard' component={Dashboard} />
+        <PrivateRoute exact path='/dashboard' component={Dashboard}/>
         <PrivateRoute exact path='/dashboardMentee' component={DashboardMentee} />
         <Route exact path='/' component={Home} />
         <Route exact path='/menteeLogin' component={MenteeLogin} />
