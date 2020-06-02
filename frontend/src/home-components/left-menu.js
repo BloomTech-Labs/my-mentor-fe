@@ -28,9 +28,9 @@ class LeftMenu extends Component {
         <Menu.Item key='alipay'>
           <Link to='/dashboard'>Dashboard</Link>
         </Menu.Item>
-        <Menu.Item key='g1'>
+        {/* <Menu.Item key='g1'>
           <Link to='/mentorLogin'>Login</Link>
-        </Menu.Item>
+        </Menu.Item> */}
       </Menu>
     );
   }
