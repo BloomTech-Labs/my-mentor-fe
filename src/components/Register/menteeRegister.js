@@ -29,6 +29,7 @@ const MenteeRegister = (props) => {
     e.preventDefault();
     setIsLoading(true)
     setError('')
+    console.log('here')
     AxiosWithAuth()
       .post("/auth/register/mentee", registerData)
       .then((res) => {
@@ -68,7 +69,7 @@ const MenteeRegister = (props) => {
           <TextField
             type='text'
             name='last_name'
-            value={registerData.lastName}
+            value={registerData.last_name}
             onChange={handleChange}
             label='Last Name'
             required
@@ -99,8 +100,8 @@ const MenteeRegister = (props) => {
           />
           <TextField
             type='text'
-            name='industry'
-            value={registerData.industry}
+            name='title'
+            value={registerData.title}
             onChange={handleChange}
             label='Industry'
             required
