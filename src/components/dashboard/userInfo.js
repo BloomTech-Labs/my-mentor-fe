@@ -5,7 +5,7 @@ const { Meta } = Card;
 
 
 const UserInfo = (props) => {
-   console.log(props.currentUser)
+    const name = `${props.currentUser.first_name} ${props.currentUser.last_name}`;
     return(
         <Layout>
             <Row flex="auto" justify="center">
@@ -15,10 +15,10 @@ const UserInfo = (props) => {
                         style={{ width: 240 }}
                         cover={<img alt="example" src={props.currentUser.image}/>}
                     >
-                        <Meta title={props.currentUser.first_name}/>
+                        <Meta title={name}/>
                         <p>
                             {props.currentUser.profession} <FormOutlined /> <br/>
-                            {props.currentUser.city} {props.currentUser.state} <FormOutlined /> 
+                            {props.currentUser.city}, {props.currentUser.state} <FormOutlined /> 
                         </p>
                     </Card>
                 </Col>
