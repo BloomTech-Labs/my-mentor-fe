@@ -14,14 +14,17 @@ const MenteeLogin = (props) => {
 
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    localStorage.setItem("email", loginData.email);
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     AxiosWithAuth()
-      .post("/api/auth/login/mentee", loginData)
+      .post("/auth/login/mentee", loginData)
       .then((res) => {
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("email", loginData.email);
         props.history.push("/dashboardMentee");
       })
       .catch((err) => {
