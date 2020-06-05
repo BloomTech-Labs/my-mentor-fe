@@ -47,3 +47,23 @@ export const addMenteePost = menteePost => dispatch => {
       dispatch({ type: ADD_MENTEE_POST_FAILURE , payload: error.response.data.message })
     });
 }
+
+export const BEGIN_MENTEE_PUT_PROFILE = 'BEGIN_ADD_MENTEE_POST';
+export const MENTEE_PUT_PROFILE_SUCCESS = 'ADD_MENTEE_POST_SUCCESS';
+export const MENTEE_PUT_PROFILE_FAILURE = 'ADD_MENTEE_POST_FAILURE';
+
+export const addMenteePost = menteePutProfile => dispatch => {
+  dispatch({ type: BEGIN_MENTEE_PUT_PROFILE });
+
+  axiosWithAuth()
+    .put('API GOES HERE', {
+    
+    })
+    .then(res => {
+      return dispatch({ type: MENTEE_PUT_PROFILE_SUCCESS, payload: res.data })
+    })
+    .catch(error => {
+      console.error(error);
+      dispatch({ type: MENTEE_PUT_PROFILE_FAILURE , payload: error.response.data.message })
+    });
+}
