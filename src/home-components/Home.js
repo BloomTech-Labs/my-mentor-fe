@@ -58,7 +58,7 @@ window.onload = function() {
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid  rgb(56, 142, 255)}";
     document.body.appendChild(css);
 };
 
@@ -66,18 +66,19 @@ window.onload = function() {
     <div>
       {/* <Nav /> replace with dynamic routes for mentor/mentee */}
       <Button simple>
-        <Link to="/mentorLogin">Mentor Login</Link>
+        <Link to="/login">Find A Mentor</Link>
       </Button>
       <Button simple>
-        <Link to="/menteeLogin">Mentee Login</Link>
+        <Link to="/menteeLogin">Become A Mentor</Link>
       </Button>   
-       <h1 className="home-header">
+      
+      <div className="home-div">
+         <h1 className="home-header">
           {/* Connect to your future, rewrite the past */}
-          <a href="/" className="typewrite" data-period="2000" data-type='["Search for mentors.", "Sponser a mentee.", "Customize your search.", "Be apart of a community."]'>
+          <a href="/" className="typewrite" data-period="2000" data-type='["Find a mentor.", "Become a mentor.", "Become your best self.", "Career advice for tomorrow&#39;s leaders."]'>
             <span className='wrap'></span>
           </a>
         </h1>
-      <div className="home-div">
         <img
           className="home-pic"
           src={require("./photos/joshua-unsplash.jpg")}

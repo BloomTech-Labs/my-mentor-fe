@@ -35,7 +35,7 @@ const MentorRegister = (props) => {
         console.log(registerData)
         setIsLoading(false)
         setRegisterData(initialRegState)
-        props.history.push("/mentorLogin");
+        props.history.push("/login");
       })
       .catch((err) => {
         setIsLoading(false)

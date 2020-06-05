@@ -36,7 +36,7 @@ const MenteeRegister = (props) => {
         setIsLoading(false)
         console.log(registerData);
         setRegisterData(initialRegState)
-        props.history.push("/menteeLogin");
+        props.history.push("/login");
       })
       .catch((err) => {
         setIsLoading(false)

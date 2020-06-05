@@ -36,7 +36,7 @@ const MenteeLogin = (props) => {
 
   return (
     <div className='login-register'>
-      <h2 className='title'>Already have an account</h2>
+      <h2 className='title'>Already have a <span className='name'> Mentee </span> account</h2>
       <span>Sign in with email and password</span>
 
       <form className='formInput' onSubmit={handleSubmit}>
@@ -58,7 +58,7 @@ const MenteeLogin = (props) => {
         <label>Password</label>
         <Button type='submit' value='Submit Form'>Log In</Button>
         <Button>
-          <Link to='/menteeRegister'>Register</Link>
+          <Link to='/register'>Register</Link>
         </Button>
       </form>
     </div>

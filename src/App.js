@@ -1,10 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import MenteeLogin from "./components/Login/MenteeLogin";
-import MentorLogin from "./components/Login/MentorLogin";
-import MenteeRegister from './components/Register/menteeRegister';
-import MentorRegister from "./components/Register/mentorRegister";
+import DesignLogin from "./components/Login/DesignLogin";
+import DesignRegister from "./components/Register/DesignRegister";
 import Dashboard from "./components/dashboard/dashboard";
 import PrivateRoute from "./middleware/privateRoute";
 import ProfilePage from './mentorProfile/src/views/ProfilePage/ProfilePage';
@@ -19,14 +17,12 @@ function App() {
  
   return (
     <>
-      <Switch>
+      <Switch >
         <PrivateRoute exact path='/dashboard' component={Dashboard}/>
         <PrivateRoute exact path='/dashboardMentee' component={DashboardMentee} />
         <Route exact path='/' component={Home} />
-        <Route exact path='/menteeLogin' component={MenteeLogin} />
-        <Route exact path='/mentorLogin' component={MentorLogin} />
-        <Route exact path='/menteeRegister' component={MenteeRegister} />
-        <Route exact path='/mentorRegister' component={MentorRegister} />
+        <Route exact path='/login' component={DesignLogin} />
+        <Route exact path='/register' component={DesignRegister} />
         <Route exact path='/profilePage' component={ProfilePage} />
         <Route exact path='/menteeProfilePage' component={MenteeProfilePage} />
         <Route exact path='/browsementor' component={browseMentor} />

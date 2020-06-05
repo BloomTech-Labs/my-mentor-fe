@@ -1,13 +1,15 @@
 .home-div{
     width: 100%;
     text-align: center;
+    display:flex;
+    justify-content: center;
 }
 
 .home-header {
     z-index: 1;
     position: absolute;
    top: 58%;
-   left: 28%;
+   /* left: 28%; */
    font-size: 3.3rem;
 }
 .typewrite{
