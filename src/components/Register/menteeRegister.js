@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button, CircularProgress } from "@material-ui/core";
-
+import { withRouter } from 'react-router-dom';
 import "./register.scss";
 
 const initialRegState = {
@@ -121,4 +121,4 @@ const MenteeRegister = (props) => {
   };
 }
 
-export default MenteeRegister;
+export default withRouter(MenteeRegister);

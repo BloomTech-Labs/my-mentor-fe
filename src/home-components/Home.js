@@ -66,10 +66,10 @@ window.onload = function() {
     <div>
       {/* <Nav /> replace with dynamic routes for mentor/mentee */}
       <Button simple>
-        <Link to="/login">Find A Mentor</Link>
+        <Link to="/login">Login</Link>
       </Button>
       <Button simple>
-        <Link to="/menteeLogin">Become A Mentor</Link>
+        <Link to="/register">Sign Up</Link>
       </Button>   
       
       <div className="home-div">

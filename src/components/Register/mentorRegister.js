@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
 import CircularProgress from '@material-ui/core/CircularProgress'
-
+import { withRouter } from 'react-router-dom';
 import "./register.scss";
 
 const initialRegState = {
@@ -127,4 +127,4 @@ const MentorRegister = (props) => {
     );
   };
 }
-export default MentorRegister;
+export default withRouter(MentorRegister);
