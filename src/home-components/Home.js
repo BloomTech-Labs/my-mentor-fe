@@ -64,14 +64,19 @@ window.onload = function() {
 
   return (
     <div>
-      {/* <Nav /> replace with dynamic routes for mentor/mentee */}
-      <Button simple>
-        <Link to="/login">Login</Link>
-      </Button>
-      <Button simple>
-        <Link to="/register">Sign Up</Link>
-      </Button>   
-      
+      <div className='nav'>
+        <div>
+          The Mentor Connects
+        </div>
+        <div className='nav-buttons'>
+          <Button simple>
+            <Link to="/login">Login</Link>
+          </Button>
+          <Button simple>
+            <Link to="/register">Sign Up</Link>
+          </Button>
+        </div>  
+      </div>
       <div className="home-div">
          <h1 className="home-header">
           {/* Connect to your future, rewrite the past */}

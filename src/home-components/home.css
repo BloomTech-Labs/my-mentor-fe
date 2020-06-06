@@ -1,3 +1,9 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .home-div{
     width: 100%;
     text-align: center;
