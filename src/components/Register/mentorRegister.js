@@ -4,6 +4,22 @@ import { TextField, Button } from "@material-ui/core";
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { withRouter } from 'react-router-dom';
 import "./register.scss";
+import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 const initialRegState = {
   first_name: "",
@@ -20,11 +36,12 @@ const MentorRegister = (props) => {
   const [registerData, setRegisterData] = useState(initialRegState);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const classes = useStyles();
 
   const handleChange = (e) => {
     setRegisterData({ ...registerData, [e.target.name]: e.target.value });
   };
-
+console.log(registerData);
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true)
@@ -81,14 +98,72 @@ const MentorRegister = (props) => {
             label='City'
             required
           />
-          <TextField
-            type='text'
-            name='state'
-            value={registerData.state}
-            onChange={handleChange}
-            label='State'
-            required
-          />
+      <FormControl required className={classes.formControl}>
+        <InputLabel id="demo-simple-select-required-label">State</InputLabel>
+        <Select
+          labelId="demo-simple-select-required-label"
+          id="demo-simple-select-required"
+          value={registerData.state}
+          onChange={handleChange}
+          name='state'
+          className={classes.selectEmpty}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value='Alabama'>Alabama</MenuItem>         
+          <MenuItem value='Alaska'>Alaska</MenuItem>
+          <MenuItem value='Arizona'>Arizona</MenuItem>
+          <MenuItem value='Arkansas'>Arkansas</MenuItem>
+          <MenuItem value='California'>California</MenuItem>
+          <MenuItem value='Colorado'>Colorado</MenuItem>
+          <MenuItem value='Connecticut'>Connecticut</MenuItem>
+          <MenuItem value='Delaware'>Delaware</MenuItem>         
+          <MenuItem value='DC'>District of Columbia</MenuItem>
+          <MenuItem value='Florida'>Florida</MenuItem>
+          <MenuItem value='Georgia'>Georgia</MenuItem>
+          <MenuItem value='Hawaii'>Hawaii</MenuItem>
+          <MenuItem value='Idaho'>Idaho</MenuItem>
+          <MenuItem value='Illinois'>Illinois</MenuItem>
+          <MenuItem value='Indiana'>Indiana</MenuItem>         
+          <MenuItem value='Iowa'>Iowa</MenuItem>
+          <MenuItem value='Kansas'>Kansas</MenuItem>
+          <MenuItem value='Kentucky'>Kentucky</MenuItem>
+          <MenuItem value='Louisiana'>Louisiana</MenuItem>
+          <MenuItem value='Maine'>Maine</MenuItem>
+          <MenuItem value='Maryland'>Maryland</MenuItem>
+          <MenuItem value='Massachusetts'>Massachusetts</MenuItem>         
+          <MenuItem value='Michigan'></MenuItem>
+          <MenuItem value='Minnesota'></MenuItem>
+          <MenuItem value='Mississippi'></MenuItem>
+          <MenuItem value='Missouri'></MenuItem>
+          <MenuItem value='Montana'></MenuItem>
+          <MenuItem value='Nebraska'></MenuItem>    
+          <MenuItem value='Nevada'></MenuItem>         
+          <MenuItem value='New Hampshire'></MenuItem>
+          <MenuItem value='New Jersey'></MenuItem>
+          <MenuItem value='New Mexico'></MenuItem>
+          <MenuItem value='New York'></MenuItem>
+          <MenuItem value='North Carolina'></MenuItem>    
+          <MenuItem value='North Dakota'></MenuItem>         
+          <MenuItem value='Ohio'></MenuItem>
+          <MenuItem value='Oklahoma'></MenuItem>
+          <MenuItem value='Oregon'></MenuItem>
+          <MenuItem value='Pennsylvania'></MenuItem>          
+          <MenuItem value='Rhode Island'></MenuItem>    
+          <MenuItem value='South Carolina'></MenuItem>         
+          <MenuItem value='South Dakota'></MenuItem>
+          <MenuItem value='Tennessee'></MenuItem>
+          <MenuItem value='Texas'></MenuItem>
+          <MenuItem value='Utah'></MenuItem>        
+          <MenuItem value='Vermont'></MenuItem>    
+          <MenuItem value='Virginia'></MenuItem>         
+          <MenuItem value='Washington'></MenuItem>
+          <MenuItem value='West Virginia'></MenuItem>
+          <MenuItem value='Wisconsin'></MenuItem>
+          <MenuItem value='Wyoming'></MenuItem>
+        </Select>
+      </FormControl>
           <TextField
             type='text'
             name='profession'
