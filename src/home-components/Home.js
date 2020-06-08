@@ -1,6 +1,5 @@
 import React from "react";
 import "./home.css";
-import Nav from "../home-components/nav-drawer";
 import { Link } from "react-router-dom";
 import Button from "../mentorProfile/src/components/CustomButtons/Button";
 
@@ -66,7 +65,7 @@ window.onload = function() {
     <div>
       <div className='nav'>
         <div>
-          The Mentor Connects
+          Mentor Connector
         </div>
         <div className='nav-buttons'>
           <Button simple>
@@ -79,7 +78,6 @@ window.onload = function() {
       </div>
       <div className="home-div">
          <h1 className="home-header">
-          {/* Connect to your future, rewrite the past */}
           <a href="/" className="typewrite" data-period="2000" data-type='["Find a mentor.", "Become a mentor.", "Become your best self.", "Career advice for tomorrow&#39;s leaders."]'>
             <span className='wrap'></span>
           </a>
