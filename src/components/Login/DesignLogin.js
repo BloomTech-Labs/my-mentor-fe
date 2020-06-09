@@ -16,7 +16,7 @@ const Design = () => {
     <>
     <div className='nav'>
       <div>
-        The Mentor Connects
+        The Mentor Connector
       </div>
       <div className='nav-buttons'>
         <Button simple>
