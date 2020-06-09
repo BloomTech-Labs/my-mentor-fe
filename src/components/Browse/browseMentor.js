@@ -6,7 +6,6 @@ import "./browseMentor.css";
 function BrowseMentor() {
     const [mentor, setMentor] = useState([]);
     const [query, setQuery] = useState('');
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios

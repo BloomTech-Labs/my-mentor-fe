@@ -1,6 +1,5 @@
 import React from "react";
 import "./home.css";
-import Nav from "../home-components/nav-drawer";
 import { Link } from "react-router-dom";
 import Button from "../mentorProfile/src/components/CustomButtons/Button";
 
@@ -58,26 +57,31 @@ window.onload = function() {
     // INJECT CSS
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid  rgb(56, 142, 255)}";
     document.body.appendChild(css);
 };
 
   return (
     <div>
-      {/* <Nav /> replace with dynamic routes for mentor/mentee */}
-      <Button simple>
-        <Link to="/mentorLogin">Mentor Login</Link>
-      </Button>
-      <Button simple>
-        <Link to="/menteeLogin">Mentee Login</Link>
-      </Button>   
-       <h1 className="home-header">
-          {/* Connect to your future, rewrite the past */}
-          <a href="/" className="typewrite" data-period="2000" data-type='["Search for mentors.", "Sponser a mentee.", "Customize your search.", "Be apart of a community."]'>
+      <div className='nav'>
+        <div>
+          Mentor Connector
+        </div>
+        <div className='nav-buttons'>
+          <Button simple>
+            <Link to="/login">Login</Link>
+          </Button>
+          <Button simple>
+            <Link to="/register">Sign Up</Link>
+          </Button>
+        </div>  
+      </div>
+      <div className="home-div">
+         <h1 className="home-header">
+          <a href="/" className="typewrite" data-period="2000" data-type='["Find a mentor.", "Become a mentor.", "Become your best self.", "Career advice for tomorrow&#39;s leaders."]'>
             <span className='wrap'></span>
           </a>
         </h1>
-      <div className="home-div">
         <img
           className="home-pic"
           src={require("./photos/joshua-unsplash.jpg")}
