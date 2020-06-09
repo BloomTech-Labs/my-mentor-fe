@@ -69,6 +69,26 @@ export const updatePost = (id, post) => dispatch => {
   });
 }
 
+export const BEGIN_DELETE_MENTEE_POST = 'BEGIN_DELETE_MENTEE_POST';
+export const DELETE_MENTEE_POST_SUCCESS = 'DELETE_MENTEE_POST_SUCCESS';
+export const DELETE_MENTEE_POST_FAILURE = 'DELETE_MENTEE_POST_FAILURE';
+
+export const deletePost = (id) => dispatch => {
+  dispatch({ type: BEGIN_DELETE_MENTEE_POST })
+
+  axiosWithAuth()
+  .delete("API GOES HERE")
+  .then(res => {
+    dispatch({ type: DELETE_MENTEE_POST_SUCCESS, payload: id })
+  })
+  .catch(error => {
+    console.error(error);
+   
+    dispatch({ type: DELETE_MENTEE_POST_FAILURE , payload: error.response.data.message })
+  });
+}
+
+
 export const BEGIN_MENTEE_PUT_PROFILE = 'BEGIN_ADD_MENTEE_POST';
 export const MENTEE_PUT_PROFILE_SUCCESS = 'ADD_MENTEE_POST_SUCCESS';
 export const MENTEE_PUT_PROFILE_FAILURE = 'ADD_MENTEE_POST_FAILURE';
