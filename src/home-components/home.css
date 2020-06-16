@@ -1,15 +1,30 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+
+}
+
 .home-div{
-    font-size: 25px;
-    color: aliceblue;
-    background-image: linear-gradient(rgb(88,151,250), white);
     width: 100%;
     text-align: center;
+    display:flex;
+    justify-content: center;
 }
 
 .home-header {
-    color: aliceblue;
+    z-index: 1;
+    position: absolute;
+   top: 58%;
+   /* left: 28%; */
+   font-size: 3.3rem;
 }
-
+.typewrite{
+    background: -webkit-linear-gradient( right, rgb(56, 142, 255) , rgb(6, 21, 26));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
 .home-pic {
     width: 100%;
+    position: relative;
 }
