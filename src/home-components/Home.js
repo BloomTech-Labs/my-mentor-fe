@@ -1,6 +1,5 @@
 import React from "react";
 import "./home.css";
-import Nav from "../home-components/nav-drawer";
 import { Link } from "react-router-dom";
 import Button from "../mentorProfile/src/components/CustomButtons/Button";
 

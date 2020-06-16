@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import Nav from '../../home-components/nav-drawer';
+import Nav from '../../mentee/menteeNav';
 import UserInfoMentee from './userInfoMentee.js';
 
 

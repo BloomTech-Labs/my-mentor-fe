@@ -8,7 +8,7 @@ import Palette from "@material-ui/icons/Palette";
 import Favorite from "@material-ui/icons/Favorite";
 import InfoIcon from "@material-ui/icons/Info";
 // core components
-import Header from "../home-components/nav-drawer";
+import Header from "../mentee/menteeNav";
 import Footer from "../mentorProfile/src/components/Footer/Footer";
 import Button from "../mentorProfile/src/components/CustomButtons/Button";
 import GridContainer from "../mentorProfile/src/components/Grid/GridContainer";
