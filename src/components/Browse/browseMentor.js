@@ -23,7 +23,7 @@ function BrowseMentor() {
     };
     return(
         <div>
-            <Nav />
+            
             <h3 className='header'>
               Find your Mentor  
             </h3>

@@ -4,8 +4,7 @@ import Dashboard from '../components/dashboard/DashboardMentee';
 import LeftMenu from "./left-menu";
 import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
-import Searchbar from '../search-bar/searchbox'
-import ProfilePageSample from './ProfilePage';
+import Searchbar from '../components/Browse/browseMentor'
 import { Link } from "react-router-dom";
 
 class Navbar extends Component {
