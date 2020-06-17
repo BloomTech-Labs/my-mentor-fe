@@ -26,7 +26,7 @@ class Navbar extends Component {
   
     return (
       <nav className="menuBar">
-        <Searchbar /> 
+      
         <div className="logo">
           <Link to="/">Mentor Connector</Link>
         </div> 
