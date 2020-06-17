@@ -25,7 +25,6 @@ const MentorLogin = (props) => {
       .then((res) => {
         localStorage.setItem("email", loginData.email);
         localStorage.setItem("token", res.data.token);
-        
         console.log("responding data:", res);
         props.history.push(`/dashboard`);
       })

@@ -1,4 +1,6 @@
 import React from 'react';
+import Conversations from './DirectMessages/Conversations';
+
 import { Layout, Card, Col, Row } from 'antd';
 import { FormOutlined } from '@ant-design/icons';
 const { Meta } = Card;
@@ -13,7 +15,7 @@ const UserInfo = (props) => {
                     <Card
                         hoverable
                         style={{ width: 240 }}
-                        cover={<img alt="example" src={props.currentUser.image}/>}
+                        cover={<img alt="user" src={props.currentUser.image}/>}
                     >
                         <Meta title={name}/>
                         <p>
@@ -26,7 +28,7 @@ const UserInfo = (props) => {
                         <Row  gutter={[16,{ xs: 24, sm: 24, md: 24, lg: 32 }]} flex="auto" justify="space-around">
                         <Col xs={20} sm={12} md={12} lg={10}>
                             <Card style={{height: 400}} title="Messages" bordered={false}>
-                            Messages content here
+                            <Conversations currentUser={props.currentUser}/>
                             </Card>
                         </Col>
                         <Col gutter={10}xs={20} sm={12} md={12} lg={10} >
