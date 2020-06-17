@@ -29,7 +29,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    //first three case switches need review - hector
+    
     case START_MENTEE_LOGIN:
       return {
         ...state,
