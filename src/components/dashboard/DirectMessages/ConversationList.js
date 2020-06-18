@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
+import axios from 'axios';
 import Messages from './Messages';
 import { Modal, Button } from 'antd';
 
 const ConversationList = (props) => {
     const [state, setState] = useState({ visible: false });
-
+   
     const showModal = () => {
         setState({ visible: true })
     }
@@ -12,6 +13,8 @@ const ConversationList = (props) => {
     const handleClose = e => {
         setState({ visible: false })
     }
+    
+
 
     return(
         <>
@@ -25,10 +28,9 @@ const ConversationList = (props) => {
                 onCancel={handleClose}
                 // okText='Close Message'
                 footer={[
-                    <Button key='back' type='primary' onClick={handleClose} >
-                        Close Message
+                    <Button key='back' type='primary' ghost onClick={handleClose} >
+                        Close
                     </Button>
-                    
                 ]}
             >
                 <Messages conversation={props.conversation} currentUser={props.currentUser}/>

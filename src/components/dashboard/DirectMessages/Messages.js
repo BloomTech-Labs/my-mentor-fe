@@ -1,31 +1,42 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Message from './Message';
-import { Input } from 'antd';
+import { Input, Button } from 'antd';
 const { TextArea } = Input;
 
 const Messages = (props) => {
     const [messages, setMessages] = useState([]);
-    const [newMessage, setNewMessage] = useState({
-        user_from: props.currentUser,
+    const initialState = {
+        id: Date.now(),
+        user_from: props.currentUser.first_name,
         user_to: props.conversation.user_2,
         body: ''
-    })
-
+    };
+     const [newMessages, setNewMessage] = useState(initialState);
     useEffect(() => {
         axios
         .get(`https://mentor-be.herokuapp.com/api/conversation/${props.conversation.id}/messages`)
         .then(res => {
             setMessages(res.data)
         })
-    }, [])
+    }, [newMessages]);
 
     const handleChanges = e => {
         setNewMessage({
-            ...newMessage, [e.target.name]: e.target.value
+            ...newMessages, [e.target.name]: e.target.value
         })
-    }
-    console.log(messages)
+    };
+      const submit = e => {
+        //Creates new message
+        e.preventDefault();
+        axios
+        .post(`https://mentor-be.herokuapp.com/api/conversation/${props.conversation.id}/messages`, newMessages)
+        .then(res => {
+            setNewMessage(initialState);
+        })
+        .catch(err => console.log(err));
+    };
+  
     return (
         <div>
             <div className='messageContainer'>
@@ -33,9 +44,18 @@ const Messages = (props) => {
                    return <Message message={item} key={item.id} currentUser={props.currentUser} />
                 })}
             </div>
-            <div>
-                <TextArea placeholder='Send A Message' autoSize allowClear/>
-            </div>
+            <form >
+                <TextArea autoSize allowClear
+                    name='body'
+                    placeholder='Send A Message' 
+                    onChange={handleChanges} 
+                    value={newMessages.body} 
+                    onPressEnter={submit}
+                />
+                <Button type='primary' onClick={submit} >
+                    Send
+                </Button>
+            </form>
         </div>
     )
 }
