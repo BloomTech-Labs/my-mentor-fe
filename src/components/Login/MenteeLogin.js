@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
+import { withRouter } from 'react-router-dom';
 
 import "./siginin.scss";
 import { Link } from "react-router-dom";
@@ -65,4 +66,4 @@ const MenteeLogin = (props) => {
   );
 };
 
-export default MenteeLogin;
+export default withRouter(MenteeLogin);
