@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 import Messages from './Messages';
 import { Modal, Button } from 'antd';
+import { CloseCircleOutlined } from '@ant-design/icons';
+import './DirectMessages.css';
 
 const ConversationList = (props) => {
     const [state, setState] = useState({ visible: false });
@@ -14,19 +15,16 @@ const ConversationList = (props) => {
         setState({ visible: false })
     }
     
-
-
     return(
         <>
             <div className='conversation' onClick={showModal}>
-                {props.conversation.user_2} 
+               <p>{props.conversation.user_2} </p>
+                <div className='icon'><CloseCircleOutlined /></div>
             </div>
             <Modal
                 title={props.conversation.user_2}
                 visible={state.visible}
-                // onOk={handleClose}
                 onCancel={handleClose}
-                // okText='Close Message'
                 footer={[
                     <Button key='back' type='primary' ghost onClick={handleClose} >
                         Close

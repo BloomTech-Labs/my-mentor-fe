@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import ConversationList from './ConversationList';
 import axios from 'axios';
 import { AutoComplete } from 'antd';
+import './DirectMessages.css';
 
 const Conversations = (props) => { console.log(props.currentUser.first_name)
     const [convo, setConvo] = useState([]);
@@ -52,7 +53,7 @@ const Conversations = (props) => { console.log(props.currentUser.first_name)
 
     return (
         <div>
-            <form onSubmit={submit}>
+            <form className='autoComplete' onSubmit={submit}>
                 <AutoComplete
                     style={{
                     width: 200,
@@ -67,11 +68,13 @@ const Conversations = (props) => { console.log(props.currentUser.first_name)
                     value={addConvo.user_2}
                 />
             </form>
-            {convo.map(convo => {
-                return( 
-                    <ConversationList key={convo.id} conversation={convo} currentUser={props.currentUser} />
-                )
-            })}
+            <div className='conversationContainer'>
+                {convo.map(convo => {
+                    return( 
+                        <ConversationList key={convo.id} conversation={convo} currentUser={props.currentUser} />
+                    )
+                })}
+            </div>
         </div>
     )
 }
