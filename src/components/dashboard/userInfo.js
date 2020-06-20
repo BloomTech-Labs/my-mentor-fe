@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Conversations from './DirectMessages/Conversations';
+import { AxiosWithAuth } from '../../middleware/axioswithauth';
 
 import { Layout, Card, Col, Row } from 'antd';
 import { FormOutlined } from '@ant-design/icons';
@@ -7,6 +8,15 @@ const { Meta } = Card;
 
 
 const UserInfo = (props) => {
+    const [mentees, setMentees] = useState([]);
+    console.log(props.currentUser)
+    useEffect(() => {
+        AxiosWithAuth()
+        .get('https://mentor-be.herokuapp.com/api/mentee')
+        .then(res => {
+            setMentees(res.data)
+        })
+    }, [])
     const name = `${props.currentUser.first_name} ${props.currentUser.last_name}`;
     return(
         <Layout>
@@ -28,7 +38,7 @@ const UserInfo = (props) => {
                         <Row  gutter={[16,{ xs: 24, sm: 24, md: 24, lg: 32 }]} flex="auto" justify="space-around">
                         <Col xs={20} sm={12} md={12} lg={10}>
                             <Card style={{height: 400}} title="Messages" bordered={false}>
-                            <Conversations currentUser={props.currentUser}/>
+                            <Conversations currentUser={props.currentUser} mentee={mentees}/>
                             </Card>
                         </Col>
                         <Col gutter={10}xs={20} sm={12} md={12} lg={10} >
