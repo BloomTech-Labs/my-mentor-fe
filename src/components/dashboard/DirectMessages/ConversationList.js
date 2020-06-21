@@ -18,7 +18,7 @@ const ConversationList = (props) => {
 
     return(
         <>
-            <div className='conversation'>
+            <div className='conversation' onClick={showModal}>
                {props.conversation.user_2}
             </div>
             <Modal
