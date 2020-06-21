@@ -16,7 +16,9 @@ const Design = () => {
     <>
     <div className='nav'>
       <div className='logo'>
-      <img src={require('../../home-components/photos/connector1.png')} alt='logo'/>
+        <Link to='/'>
+        <img src={require('../../home-components/photos/connector1.png')} alt='logo'/>
+        </Link>
       </div>
       <div className='nav-buttons'>
         <Button simple>

@@ -33,3 +33,7 @@
     width: 100%;
     position: relative;
 }
+
+.menuBar .menuCon {
+    padding-left: 120px;
+}

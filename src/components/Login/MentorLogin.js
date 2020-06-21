@@ -35,7 +35,7 @@ const MentorLogin = (props) => {
 
   return (
     <div className='login-register'>
-      <h2 className='title'>Already have a <span className='name'> Mentor </span> account</h2>
+      <h2 className='title'>Already have a <span className='name'> Mentor </span> account?</h2>
       <span>Sign in with email and password</span>
 
       <form className='formInput' onSubmit={login}>
