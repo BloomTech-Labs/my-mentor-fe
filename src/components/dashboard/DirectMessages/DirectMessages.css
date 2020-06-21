@@ -11,13 +11,7 @@
     border-bottom: 1px solid gray;
     padding:8px;
 }
-.conversation .icon {
-    visibility: hidden;
-}
-.conversation .icon:hover{
-    visibility: visible;
-    opacity: 1;
-}
+
 .message {
  max-width: 300px;
  background-color: gray;

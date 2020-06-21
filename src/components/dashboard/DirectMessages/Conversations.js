@@ -50,7 +50,7 @@ const Conversations = (props) => { console.log(props.currentUser.first_name)
         })
         .catch(err => console.log(err));
     };
-
+   
     return (
         <div>
             <form className='autoComplete' onSubmit={submit}>
@@ -71,7 +71,7 @@ const Conversations = (props) => { console.log(props.currentUser.first_name)
             <div className='conversationContainer'>
                 {convo.map(convo => {
                     return( 
-                        <ConversationList key={convo.id} conversation={convo} currentUser={props.currentUser} />
+                        <ConversationList key={convo.id} conversation={convo} currentUser={props.currentUser} updateConvo={setConvo}/>
                     )
                 })}
             </div>
