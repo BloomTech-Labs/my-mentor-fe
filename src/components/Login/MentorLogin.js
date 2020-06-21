@@ -21,7 +21,7 @@ const MentorLogin = (props) => {
   const login = (e) => {
     e.preventDefault();
     AxiosWithAuth()
-      .post("/auth/login/mentor", loginData)
+      .post("api/auth/login/mentor", loginData)
       .then((res) => {
         localStorage.setItem("email", loginData.email);
         localStorage.setItem("token", res.data.token);

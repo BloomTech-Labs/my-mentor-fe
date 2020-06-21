@@ -18,7 +18,7 @@ class LeftMenu extends Component {
           <Link to='/dashboardMentee'>Dashboard</Link>
         </Menu.Item>
         <Menu.Item key='g1'>
-        <Link to='/menteeLogin'>Logout</Link>
+        <Link to='/browsementor'>Browse</Link>
         </Menu.Item>
       </Menu>
     );
