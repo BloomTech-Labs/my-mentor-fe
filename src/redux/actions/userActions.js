@@ -28,6 +28,13 @@ export const getMentorPost = () => dispatch => {
     });
 }
 
+export const BEGIN_SETUSER = "BEGIN_SETUSER";
+
+export const setUser = (user) => dispatch => {
+  dispatch({ type: BEGIN_SETUSER, payload: user });
+
+}
+
 export const BEGIN_ADD_MENTOR_POST = 'BEGIN_ADD_MENTOR_POST';
 export const ADD_MENTOR_POST_SUCCESS = 'ADD_MENTOR_POST_SUCCESS';
 export const ADD_MENTOR_POST_FAILURE = 'ADD_MENTOR_POST_FAILURE';
@@ -48,24 +55,23 @@ export const addMentorPost = mentorPost => dispatch => {
     });
 }
 
-export const BEGIN_MENTOR_UPDATE_POST = 'BEGIN_MENTOR_UPDATE_POST';
-export const UPDATE_MENTOR_POST_SUCCESS = 'UPDATE_MENTOR_POST_SUCCESS';
-export const UPDATE_MENTOR_POST_FAILURE = 'UPDATE_MENTOR_POST_FAILURE';
+export const BEGIN_MENTOR_PROFILE_UPDATE = 'BEGIN_MENTOR_UPDATE_POST';
+export const UPDATE_MENTOR_PROFILE_UPDATE_SUCCESS = 'UPDATE_MENTOR_POST_SUCCESS';
+export const UPDATE_MENTOR_PROFILE_UPDATE_FAILURE = 'UPDATE_MENTOR_POST_FAILURE';
 
-export const updatePost = (id, post) => dispatch => {
-  dispatch({ type: BEGIN_MENTOR_UPDATE_POST });
+export const updateProfile = (user) => dispatch => {
+  dispatch({ type: BEGIN_MENTOR_PROFILE_UPDATE });
 
   axiosWithAuth()
-  .put("https://mentor-be.herokuapp.com/api/mentor/:mentorId/posts/:pid	", {
-    
-  })
+  .put(`https://mentor-be.herokuapp.com/api/mentor/${user.id}`, user)
   .then(res => {
-    dispatch({ type: UPDATE_MENTOR_POST_SUCCESS, payload: res.data, message: 'successfully updated'})
+    dispatch({ type: UPDATE_MENTOR_PROFILE_UPDATE_SUCCESS, payload: res.data})
+    console.log(res, "testing edit button")
   })
   .catch(error => {
     console.error(error);
   
-    dispatch({ type: UPDATE_MENTOR_POST_FAILURE , payload: error.response.data.message })
+    dispatch({ type: UPDATE_MENTOR_PROFILE_UPDATE_FAILURE , payload: error.response.data.message })
   });
 }
 

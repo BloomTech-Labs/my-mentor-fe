@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -34,9 +36,26 @@ import dale from "../../assets/img/examples/dale.jpg";
 
 import styles from "../../assets/jss/material-kit-react/views/profilePage.js";
 
+//actions
+import { updateProfile } from "../../../../redux/actions/userActions";
+
+
 const useStyles = makeStyles(styles);
 
-export default function ProfilePage(props) {
+function ProfilePage(props) {
+  const [formValues, setFormValues] = useState({ ...props.user });
+
+  console.log(props, "props")
+
+  const changeHandler = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateProfile(formValues);
+  };
+
   const classes = useStyles();
   const { ...rest } = props;
   const imageClasses = classNames(
@@ -48,6 +67,16 @@ export default function ProfilePage(props) {
   return (
     <div>
       <MentorHeader />
+      <form>
+        <input
+          type="text"
+          name="first_name"
+          placeholder="change Name"
+          onChange={changeHandler}
+          value={formValues.first_name}
+        />
+        <Button onClick={handleSubmit}>Save Edit</Button>
+      </form>
       <Parallax
         small
         filter
@@ -63,7 +92,11 @@ export default function ProfilePage(props) {
                     <img src={profile} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Christian Louboutin</h3>
+                    <h3 className={classes.title}>
+                      {" "}
+                      {props.user}
+                    </h3>
+
                     <h6>DESIGNER</h6>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
@@ -283,7 +316,6 @@ export default function ProfilePage(props) {
                 />
               </GridItem>
             </GridContainer>
-            <Button>Edit Profile</Button>
           </div>
         </div>
       </div>
@@ -291,3 +323,11 @@ export default function ProfilePage(props) {
     </div>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+  user: state.user
+  };
+}
+
+export default connect(mapStateToProps, { updateProfile })(ProfilePage);

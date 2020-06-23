@@ -4,7 +4,6 @@ import Dashboard from '../components/dashboard/dashboard'
 import LeftMenu from "./left-menu";
 import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
-import Searchbar from '../search-bar/searchbox'
 import ProfilePageSample from '../mentorProfile/src/views/ProfilePage/ProfilePage';
 import { Link } from "react-router-dom";
 
@@ -27,7 +26,6 @@ class Navbar extends Component {
   
     return (
       <nav className="menuBar">
-        <Searchbar /> 
         <div className="logo">
           <Link to="/">Mentor Connector</Link>
         </div> 

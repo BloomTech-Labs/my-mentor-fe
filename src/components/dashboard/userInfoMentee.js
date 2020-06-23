@@ -1,11 +1,10 @@
-import React from "react";
-import { Layout, Card, Col, Row } from "antd";
-import { FormOutlined } from "@ant-design/icons";
-
-
+import React from 'react';
+import { Layout, Card, Col, Row } from 'antd';
+import { FormOutlined } from '@ant-design/icons';
 const { Meta } = Card;
 
-const UserInfo = (props) => {
+
+const UserInfoMentee = (props) => {
     const name = `${props.currentUser.first_name} ${props.currentUser.last_name}`;
     return(
         <Layout>
@@ -14,11 +13,11 @@ const UserInfo = (props) => {
                     <Card
                         hoverable
                         style={{ width: 240 }}
-                        cover={<img alt="example" src={props.currentUser.image}/>}
+                        cover={<img alt="example" src={props.currentUser.image} />}
                     >
                         <Meta title={name}/>
                         <p>
-                            {props.currentUser.profession} <FormOutlined /> <br/>
+                            {props.currentUser.title} <FormOutlined /> <br/>
                             {props.currentUser.city}, {props.currentUser.state} <FormOutlined /> 
                         </p>
                     </Card>
@@ -31,8 +30,8 @@ const UserInfo = (props) => {
                             </Card>
                         </Col>
                         <Col gutter={10}xs={20} sm={12} md={12} lg={10} >
-                            <Card style={{height: 400}} title="Mentees" bordered={false}>
-                            Mentees subscribed to content here
+                            <Card style={{height: 400}} title="Mentors" bordered={false}>
+                            Mentor subscribed to content here
                             </Card>
                         </Col>
                         </Row>
@@ -42,15 +41,4 @@ const UserInfo = (props) => {
     )
 };
 
-export default UserInfo;
-
-
-
-
-
-
-
-
-
-
-
+export default UserInfoMentee;
