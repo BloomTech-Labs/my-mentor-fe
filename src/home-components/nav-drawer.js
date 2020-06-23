@@ -6,7 +6,7 @@ import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
 import ProfilePageSample from '../mentorProfile/src/views/ProfilePage/ProfilePage';
 import { Link } from "react-router-dom";
-
+import './home.css';
 class Navbar extends Component {
   state = {
     current: "mail",
@@ -26,9 +26,9 @@ class Navbar extends Component {
   
     return (
       <nav className="menuBar">
-        <div className="logo">
-          <Link to="/">Mentor Connector</Link>
-        </div> 
+          <Link to="/" className='logo'>
+            <img src={require('./photos/connector1.png')} alt='logo'/>
+          </Link>
         <div className="menuCon">
           <div className="leftMenu">
             <LeftMenu />

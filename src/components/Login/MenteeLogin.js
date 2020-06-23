@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AxiosWithAuth } from "../../middleware/axioswithauth";
 import { TextField, Button } from "@material-ui/core";
+import { withRouter } from 'react-router-dom';
 
 import "./siginin.scss";
 import { Link } from "react-router-dom";
@@ -36,7 +37,7 @@ const MenteeLogin = (props) => {
 
   return (
     <div className='login-register'>
-      <h2 className='title'>Already have a <span className='name'> Mentee </span> account</h2>
+      <h2 className='title'>Already have a <span className='name'> Mentee </span> account?</h2>
       <span>Sign in with email and password</span>
 
       <form className='formInput' onSubmit={handleSubmit}>
@@ -65,4 +66,4 @@ const MenteeLogin = (props) => {
   );
 };
 
-export default MenteeLogin;
+export default withRouter(MenteeLogin);
