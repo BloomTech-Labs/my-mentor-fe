@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { AxiosWithAuth } from '../../../../middleware/axioswithauth';
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -46,13 +47,27 @@ export default function ProfilePage(props) {
     classes.imgFluid
   );
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  const [userLoggedIn, setUserLoggedIn] = useState([]);
+  const userStorage = useState(localStorage.getItem('email'));
+
+  useEffect(() => {
+    AxiosWithAuth()
+    .get('https://mentor-be.herokuapp.com/api/mentor',{headers: {Authorization: localStorage.getItem('token')}})
+    .then(res => {
+      const currentUser = res.data.filter(user => (
+        user.email === userStorage[0])
+      )[0];
+      setUserLoggedIn(currentUser);
+    })
+    .catch(err => console.log(err.response))
+  }, []);
   return (
     <div>
       <MentorHeader />
       <Parallax
         small
         filter
-        image={require("../../assets/img/faces/christian.jpg")}
+        image={userLoggedIn.image}
       />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
@@ -61,11 +76,11 @@ export default function ProfilePage(props) {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={userLoggedIn.image} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}> Christian Louboutin</h3>
-                    <h6>DESIGNER</h6>
+                    <h2 className={classes.title}> {userLoggedIn.first_name} {userLoggedIn.last_name}</h2>
+                    <h5>{userLoggedIn.profession}</h5>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
@@ -81,10 +96,7 @@ export default function ProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{" "}
+                {userLoggedIn.description}{" "}
               </p>
             </div>
             <GridContainer justify="center">
