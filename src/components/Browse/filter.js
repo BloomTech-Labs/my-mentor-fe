@@ -30,7 +30,7 @@ const Filter = (props) => {
         <br/>
         <br/>
         <p className='search'>
-        <Search  placeholder="search by name"  value={props.query} onChange={props.handleChange} enterButton />
+        <Search  placeholder="search by name"  value={props.query} name='first_name'onChange={props.handleChange} enterButton />
         </p>
         <br/>
         <div>

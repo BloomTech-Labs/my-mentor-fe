@@ -16,7 +16,7 @@ class RightMenu extends Component {
     return (
       <Menu mode='horizontal'>
         <Menu.Item key='mail'>
-          <Link to='/menteeLogin' onClick={this.handleLogout}>Log Out</Link>
+          <Link to='/' onClick={this.handleLogout}>Log Out</Link>
           
         </Menu.Item>
       </Menu>

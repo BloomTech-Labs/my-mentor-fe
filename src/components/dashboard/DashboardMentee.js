@@ -1,6 +1,9 @@
+
 import React, {useState, useEffect} from "react";
+import { connect } from 'react-redux';
+import Nav from '../../mentee/menteeNav';
+
 import { AxiosWithAuth } from '../../middleware/axioswithauth';
-import Nav from '../../home-components/nav-drawer';
 import UserInfoMentee from './userInfoMentee.js';
 
 
