@@ -10,6 +10,18 @@
     display:flex;
     justify-content: center;
 }
+@media (max-width: 600px) {
+    .home-div {
+      background-color: lightblue;
+    }
+    .home-pic {
+        display: none;
+    }
+    .typewrite {
+        display: flex;
+    }
+   
+  }
 
 .home-header {
     z-index: 1;
