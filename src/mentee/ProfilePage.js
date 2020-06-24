@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { AxiosWithAuth } from '../middleware/axioswithauth';
+
 import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -45,13 +47,27 @@ export default function MenteeProfilePage(props) {
     classes.imgFluid
   );
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  const [userLoggedIn, setUserLoggedIn] = useState([]);
+  const userStorage = useState(localStorage.getItem('email'));
+
+  useEffect(() => {
+    AxiosWithAuth()
+    .get('https://mentor-be.herokuapp.com/api/mentee',{headers: {Authorization: localStorage.getItem('token')}})
+    .then(res => {
+      const currentUser = res.data.filter(user => (
+        user.email === userStorage[0])
+      )[0];
+      setUserLoggedIn(currentUser);
+    })
+    .catch(err => console.log(err.response))
+  }, []);
   return (
     <div>
       <Header />
       <Parallax
         small
         filter
-        image={require("../mentorProfile/src/assets/img/faces/kendall.jpg")}
+        image={userLoggedIn.image}
       />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
@@ -60,12 +76,12 @@ export default function MenteeProfilePage(props) {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={userLoggedIn.image} alt="..." className={imageClasses} />
                    
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}>Jasmine Tiber</h3>
-                    <h6>Photographer</h6>
+                    <h2 className={classes.title}>{userLoggedIn.first_name} {userLoggedIn.last_name}</h2>
+                    <h5>{userLoggedIn.title}</h5>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
@@ -81,16 +97,7 @@ export default function MenteeProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <p>
-                As a lost college student studying math and computer science at
-                the University of Madison, stuck in a particularly brutal
-                Wisconsin winter my sophomore year, I decided I needed to
-                finally figure out what to do with my life. Growing up in New
-                York, I was used to the cold, but not like this. Those Wisconsin
-                winters really make you question your life.I consider myself
-                incredibly lucky to be doing what I do, and I try to share my
-                passion for photography and the city with everyone that I work
-                with. If you would like to consider mentoring me, I would
-                love to speak with you.{" "}
+              {userLoggedIn.description}{" "}
               </p>
             </div>
             <GridContainer justify="center">
