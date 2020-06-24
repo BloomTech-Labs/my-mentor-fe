@@ -18,8 +18,8 @@ function App() {
   return (
     <>
       <Switch >
-        <PrivateRoute exact path='/dashboard' component={Dashboard}/>
-        <PrivateRoute exact path='/dashboardMentee' component={DashboardMentee} />
+        <Route exact path='/dashboard' component={Dashboard}/>
+        <Route exact path='/dashboardMentee' component={DashboardMentee} />
         <Route exact path='/' component={Home} />
         <Route exact path='/login' component={DesignLogin} />
         <Route exact path='/register' component={DesignRegister} />

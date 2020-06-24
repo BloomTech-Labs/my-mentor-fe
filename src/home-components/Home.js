@@ -64,8 +64,8 @@ window.onload = function() {
   return (
     <div>
       <div className='nav'>
-        <div>
-          Mentor Connector
+        <div className='logo'>
+          <img src={require('./photos/connector1.png')} alt='logo'/>
         </div>
         <div className='nav-buttons'>
           <Button simple>
