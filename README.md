@@ -1,19 +1,17 @@
-#  The Mentor Connector
+# The Mentor Connector
 
 You can find the deployed project at www.theMentorConnector.net.
 
-##  Contributors
+## Contributors
 
-
-|                                       [Miley Wright](https://github.com/MileyWright)                                        |                                       [Toni Darden](https://github.com/Toniddarden)                                        |                                       [Chris Shockley](https://github.com/cishocksr)                                        |                                       [Hector Valdez](https://github.com/Haloking1212)                                        |                                       [Chris Daley](https://github.com/ShakeyFries)                                                               |                                      
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://avatars0.githubusercontent.com/u/50764974?s=460&u=e8c046e91f0c9abd9c39693bf028d9b0e85e43f3&v=4" width = "200" />](https://github.com/MileyWright)                       |                      [<img src="https://avatars1.githubusercontent.com/u/43283327?s=460&u=96942153e97025dfb2a4ee2484479f072812f513&v=4" width = "200" />](https://github.com/Toniddarden)                       |                      [<img src="https://avatars0.githubusercontent.com/u/52771915?s=460&u=6ed1182f5ab1b434bc51537b033665c976988fcb&v=4" width = "200" />](https://github.com/cishocksr)                       |                      [<img src="https://avatars3.githubusercontent.com/u/52467406?s=460&v=4" width = "200" />](https://github.com/Haloking1212)                       |                      [<img src="https://avatars3.githubusercontent.com/u/52684997?s=460&u=96b862c53e2466803697382d052f4087e30bd2a0&v=4" width = "200" />](https://github.com/ShakeyFries)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/MileyWright)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Toniddarden)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/cishocksr)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Haloking1212)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ShakeyFries)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mileywright) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/toni-darden-gh/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/christopherishockley/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/hector-valdez-420490101) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/chris-daley-b4595b196) |
+|                                                            [Miley Wright](https://github.com/MileyWright)                                                            |                                                            [Toni Darden](https://github.com/Toniddarden)                                                             |                                                           [Chris Shockley](https://github.com/cishocksr)                                                           |                                            [Hector Valdez](https://github.com/Haloking1212)                                             |                                                              [Chris Daley](https://github.com/ShakeyFries)                                                               |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars0.githubusercontent.com/u/50764974?s=460&u=e8c046e91f0c9abd9c39693bf028d9b0e85e43f3&v=4" width = "200" />](https://github.com/MileyWright) | [<img src="https://avatars1.githubusercontent.com/u/43283327?s=460&u=96942153e97025dfb2a4ee2484479f072812f513&v=4" width = "200" />](https://github.com/Toniddarden) | [<img src="https://avatars0.githubusercontent.com/u/52771915?s=460&u=6ed1182f5ab1b434bc51537b033665c976988fcb&v=4" width = "200" />](https://github.com/cishocksr) |       [<img src="https://avatars3.githubusercontent.com/u/52467406?s=460&v=4" width = "200" />](https://github.com/Haloking1212)        | [<img src="https://avatars3.githubusercontent.com/u/48919838?s=460&u=e630f239837924017af4d05ff297dd435af68ea8&v=4" width = "200" />](hhttps://github.com/NickGonzalez04) |
+|                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/MileyWright)                                       |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Toniddarden)                                       |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/cishocksr)                                       |                        [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Haloking1212)                        |                                       [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NickGonzalez04)                                        |
+|                     [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/mileywright)                      |                   [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/toni-darden-gh/)                    |               [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/christopherishockley/)                | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/hector-valdez-420490101) |               [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/nicholas-gonzalez-0541bb111/)               |
 
 <br>
 <br>
-
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
@@ -29,17 +27,15 @@ You can find the deployed project at www.theMentorConnector.net.
 
 [Product Canvas](ion.so/My-Mentor-f22420a3d843446cb185aed1c4dbce83)
 
-
-
 Conecting mentore to recent graduates across disciplins for mentoring opportunities. Mentee's can choose between a mentor's based upon profession, alma matar, or location.
 
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+- feature one
+- feature two
+- feature three
+- feature four
+- feature five
 
 ## 1️⃣ Tech Stack
 
@@ -49,22 +45,22 @@ Conecting mentore to recent graduates across disciplins for mentoring opportunit
 
 🚫 Why did you choose this framework?
 
--    point one
--    point two
--    point three
--    point four
+- point one
+- point two
+- point three
+- point four
 
 🚫List the rest of the front end features and libraries in the same format as the framework above.
 
-#### Front end deployed to  ` www.thementorconnector.net`
+#### Front end deployed to `www.thementorconnector.net`
 
 #### [Back end](🚫link to back end repo here) built using:
 
 #### 🚫 back end framework goes here
 
--    point one
--    point two
--    point three
+- point one
+- point two
+- point three
 
 🚫 List the rest of the back end end features and libraries in the same format as the framework above
 
@@ -150,12 +146,13 @@ When contributing to this repository, please first discuss the change you wish t
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
 
 ## Issue/Bug Request
-   
- **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
- - Check first to see if your issue has already been reported.
- - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
- - Create a live example of the problem.
- - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+
+**If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+
+- Check first to see if your issue has already been reported.
+- Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+- Create a live example of the problem.
+- Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
@@ -181,4 +178,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](🚫*link to your backend readme here*) for details on the backend of our project.

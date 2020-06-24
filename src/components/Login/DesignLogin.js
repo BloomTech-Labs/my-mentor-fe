@@ -15,8 +15,10 @@ const Design = () => {
   return (
     <>
     <div className='nav'>
-      <div>
-        The Mentor Connector
+      <div className='logo'>
+        <Link to='/'>
+        <img src={require('../../home-components/photos/connector1.png')} alt='logo'/>
+        </Link>
       </div>
       <div className='nav-buttons'>
         <Button simple>

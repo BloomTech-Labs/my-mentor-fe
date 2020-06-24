@@ -6,6 +6,7 @@ import RightMenu from "./right-menu";
 import { Drawer, Button } from "antd";
 import Searchbar from '../components/Browse/browseMentor'
 import { Link } from "react-router-dom";
+import '../home-components/home.css';
 
 class Navbar extends Component {
   state = {
@@ -26,10 +27,9 @@ class Navbar extends Component {
   
     return (
       <nav className="menuBar">
-      
-        <div className="logo">
-          <Link to="/">Mentor Connector</Link>
-        </div> 
+        <Link to="/" className='logo'>
+          <img src={require('../home-components/photos/connector1.png')} alt='logo'/>
+        </Link>
         <div className="menuCon">
           <div className="leftMenu">
             <LeftMenu />
