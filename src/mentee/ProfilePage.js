@@ -73,6 +73,7 @@ export default function MenteeProfilePage(props) {
   console.log(userLoggedIn)
   const handleChanges = e => {
     setUserLoggedIn({...userLoggedIn, [e.target.name]: e.target.value})
+    localStorage.setItem("email", userLoggedIn.email);
 };
 
 const update = e => {
@@ -80,7 +81,10 @@ const update = e => {
     AxiosWithAuth()
     .put(`https://mentor-be.herokuapp.com/api/mentee/${userLoggedIn.id}`, userLoggedIn)
     .then(res => {
+      localStorage.setItem("email", userLoggedIn.email);
         setUserLoggedIn(res.data)
+        window.location.reload()
+
     })
     .catch(err => console.log(err))
     handleClose()

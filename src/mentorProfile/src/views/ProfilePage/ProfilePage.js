@@ -56,6 +56,8 @@ export default function ProfilePage(props) {
   const [state, setState] = useState({ visible: false });
   const showModal = () => {
       setState({ visible: true })
+      localStorage.removeItem("email", userLoggedIn.email);
+
   }
 
   const handleClose = e => {
@@ -76,6 +78,7 @@ export default function ProfilePage(props) {
 
   const handleChanges = e => {
     setUserLoggedIn({...userLoggedIn, [e.target.name]: e.target.value})
+    localStorage.setItem("email", userLoggedIn.email);
 };
 
 const update = e => {
@@ -83,7 +86,9 @@ const update = e => {
     AxiosWithAuth()
     .put(`https://mentor-be.herokuapp.com/api/mentor/${userLoggedIn.id}`, userLoggedIn)
     .then(res => {
+        localStorage.setItem("email", userLoggedIn.email);
         setUserLoggedIn(res.data)
+        window.location.reload()
     })
     .catch(err => console.log(err))
     handleClose()
@@ -380,7 +385,7 @@ const update = e => {
                     value={userLoggedIn.description} 
                     />
             </form>
-        </div>
+             </div>
             </Modal>
           </div>
         </div>
