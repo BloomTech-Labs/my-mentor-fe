@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AxiosWithAuth } from '../middleware/axioswithauth';
+import { Modal } from 'antd';
 
 import classNames from "classnames";
 // @material-ui/core components

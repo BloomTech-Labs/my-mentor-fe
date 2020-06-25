@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AxiosWithAuth } from '../../../../middleware/axioswithauth';
+import TextField from '@material-ui/core/TextField';
+import { Modal} from 'antd';
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -11,18 +13,13 @@ import Palette from "@material-ui/icons/Palette";
 import Favorite from "@material-ui/icons/Favorite";
 import InfoIcon from "@material-ui/icons/Info";
 // core components
-import Header from "../../components/Header/Header";
 import MentorHeader from "../../../../home-components/nav-drawer";
 import Footer from "../../components/Footer/Footer.js";
 import Button from "../../components/CustomButtons/Button.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
-import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import NavPills from "../../components/NavPills/NavPills.js";
 import Parallax from "../../components/Parallax/Parallax";
-
-import profile from "../../assets/img/faces/christian.jpg";
-//assets/img/faces/christian.jpg
 
 import studio1 from "../../assets/img/examples/studio-1.jpg";
 import reviewone from "../../assets/img/examples/review1.jpg";
@@ -38,6 +35,13 @@ import styles from "../../assets/jss/material-kit-react/views/profilePage.js";
 
 const useStyles = makeStyles(styles);
 
+const initialState = {
+    first_name: "",
+    last_name: "",
+    description: "",
+    email: "",
+    profession: ""
+}
 export default function ProfilePage(props) {
   const classes = useStyles();
   const { ...rest } = props;
@@ -49,6 +53,15 @@ export default function ProfilePage(props) {
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   const [userLoggedIn, setUserLoggedIn] = useState([]);
   const userStorage = useState(localStorage.getItem('email'));
+  const [state, setState] = useState({ visible: false });
+  const [updatePost, setUpdatePost] = useState(initialState)
+  const showModal = () => {
+      setState({ visible: true })
+  }
+
+  const handleClose = e => {
+      setState({ visible: false })
+  }
 
   useEffect(() => {
     AxiosWithAuth()
@@ -60,7 +73,22 @@ export default function ProfilePage(props) {
       setUserLoggedIn(currentUser);
     })
     .catch(err => console.log(err.response))
-  }, []);
+  }, [state]);
+
+  const handleChanges = e => {
+    setUserLoggedIn({...userLoggedIn, [e.target.name]: e.target.value})
+};
+
+const update = e => {
+    // e.preventDefault()
+    AxiosWithAuth()
+    .put(`https://mentor-be.herokuapp.com/api/mentor/${userLoggedIn.id}`, userLoggedIn)
+    .then(res => {
+        setUserLoggedIn(res.data)
+    })
+    .catch(err => console.log(err))
+    handleClose()
+}
   return (
     <div>
       <MentorHeader />
@@ -296,7 +324,65 @@ export default function ProfilePage(props) {
                 />
               </GridItem>
             </GridContainer>
-            <Button>Edit Profile</Button>
+            <Button onClick={showModal}>Edit Profile</Button>
+            <Modal
+                title='Edit Profile'
+                visible={state.visible}
+                onCancel={handleClose}
+                footer={[
+                    <>
+                        <Button key='back' type='primary' ghost onClick={update} >
+                            Close
+                        </Button>
+                    </>
+                ]}
+            >
+                     <div>
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={update}>
+                <TextField 
+                    id="standard-basic" 
+                    name='first_name'
+                    label='First Name'
+                    onChange={handleChanges}
+                    value={userLoggedIn.first_name}
+                    defaultValue={userLoggedIn.first_name}
+                />
+                <TextField 
+                    id="standard-basic" 
+                    name='last_name'
+                    label='Last Name'
+                    onChange={handleChanges}
+                    value={userLoggedIn.last_name}
+                    defaultValue={userLoggedIn.last_name} 
+                />
+                <TextField 
+                    id="standard-basic" 
+                    name='profession'
+                    label='Profession'
+                    onChange={handleChanges} 
+                    value={userLoggedIn.profession}
+                    defaultValue={userLoggedIn.profession}
+                />
+                <TextField 
+                    id="standard-basic"
+                    name='email'
+                    label='Email'
+                    onChange={handleChanges} 
+                    value={userLoggedIn.email}
+                    defaultValue={userLoggedIn.email}
+                />
+                <TextField className={classes.roots}
+                    id="standard-textarea"
+                    label="Description"
+                    name='description'
+                    defaultValue={userLoggedIn.description}
+                    multiline
+                    onChange={handleChanges}
+                    value={userLoggedIn.description} 
+                    />
+            </form>
+        </div>
+            </Modal>
           </div>
         </div>
       </div>
