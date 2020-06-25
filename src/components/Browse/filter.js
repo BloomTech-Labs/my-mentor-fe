@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Drawer, Input } from 'antd';
-import Mentor from './mentor';
-import './browseMentor.css';
+import React, { useState } from "react";
+import { Drawer, Input } from "antd";
+import Mentor from "./mentor";
+import "./browseMentor.css";
 
 const { Search } = Input;
 const Filter = (props) => {
@@ -14,28 +14,40 @@ const Filter = (props) => {
   const onClose = () => {
     setVisible(false);
   };
+
   return (
     <>
-      <div className='filterbutton' onClick={showDrawer}>
+      <div className="filterbutton" onClick={showDrawer}>
         FILTER
       </div>
       <Drawer
-        className='filter'
+        className="filter"
         title="FILTER"
         placement="right"
         closable={false}
         onClose={onClose}
         visible={visible}
       >
-        <br/>
-        <br/>
-        <p className='search'>
-        <Search  placeholder="search by name"  value={props.query} name='first_name'onChange={props.handleChange} enterButton />
+        <br />
+        <br />
+        <p className="search">
+          <Search
+            placeholder="search by name"
+            value={props.query}
+            name="first_name"
+            onChange={props.handleChange}
+            enterButton
+          />
         </p>
-        <br/>
+        <br />
         <div>
-          <form action="./" method="GET" className='stateContainer'  >
-            <select className='stateForm' name="state" value={props.query} onChange={props.handleChange}>
+          <form action="./" method="GET" className="stateContainer">
+            <select
+              className="stateForm"
+              name="state"
+              value={props.query}
+              onChange={props.handleChange}
+            >
               <option> Select a state </option>
               <option value="Alabama">Alabama</option>
               <option value="Alaska">Alaska</option>
@@ -92,8 +104,8 @@ const Filter = (props) => {
           </form>
         </div>
       </Drawer>
-      <div className='gridContainer'>
-        {props.mentor.map(mentor => (
+      <div className="gridContainer">
+        {props.mentor.map((mentor) => (
           <Mentor mentor={mentor} key={mentor.id} />
         ))}
       </div>
