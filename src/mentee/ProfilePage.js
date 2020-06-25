@@ -54,6 +54,8 @@ export default function MenteeProfilePage(props) {
   const [state, setState] = useState({ visible: false });
   const showModal = () => {
       setState({ visible: true })
+      localStorage.removeItem("email", userLoggedIn.email);
+
   }
 
   const handleClose = e => {
