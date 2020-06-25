@@ -54,7 +54,6 @@ export default function ProfilePage(props) {
   const [userLoggedIn, setUserLoggedIn] = useState([]);
   const userStorage = useState(localStorage.getItem('email'));
   const [state, setState] = useState({ visible: false });
-  const [updatePost, setUpdatePost] = useState(initialState)
   const showModal = () => {
       setState({ visible: true })
   }
@@ -80,7 +79,7 @@ export default function ProfilePage(props) {
 };
 
 const update = e => {
-    // e.preventDefault()
+    e.preventDefault()
     AxiosWithAuth()
     .put(`https://mentor-be.herokuapp.com/api/mentor/${userLoggedIn.id}`, userLoggedIn)
     .then(res => {
