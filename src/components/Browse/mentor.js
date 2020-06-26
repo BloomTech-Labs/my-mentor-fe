@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Button, Modal, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import "./browseMentor.css";
 
@@ -7,7 +6,6 @@ const Mentor = (props) => {
   const [modal, setModal] = useState(false);
 
   const handleClose = () => setModal(false);
-  const handleShow = () => setModal(true);
 
   const renderModal = () => {
     return (
