@@ -18,7 +18,7 @@ function Dashboard(props) {
         setUserLoggedIn(currentUser);
       })
       .catch(err => console.log(err.response))
-    }, []);
+    }, [userLoggedIn]);
 
     return (
         <div>  

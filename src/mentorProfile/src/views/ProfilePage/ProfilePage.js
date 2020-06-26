@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { AxiosWithAuth } from '../../../../middleware/axioswithauth';
+import TextField from '@material-ui/core/TextField';
+import { Modal} from 'antd';
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -10,18 +13,13 @@ import Palette from "@material-ui/icons/Palette";
 import Favorite from "@material-ui/icons/Favorite";
 import InfoIcon from "@material-ui/icons/Info";
 // core components
-import Header from "../../components/Header/Header";
 import MentorHeader from "../../../../home-components/nav-drawer";
 import Footer from "../../components/Footer/Footer.js";
 import Button from "../../components/CustomButtons/Button.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
-import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import NavPills from "../../components/NavPills/NavPills.js";
 import Parallax from "../../components/Parallax/Parallax";
-
-import profile from "../../assets/img/faces/christian.jpg";
-//assets/img/faces/christian.jpg
 
 import studio1 from "../../assets/img/examples/studio-1.jpg";
 import reviewone from "../../assets/img/examples/review1.jpg";
@@ -37,6 +35,13 @@ import styles from "../../assets/jss/material-kit-react/views/profilePage.js";
 
 const useStyles = makeStyles(styles);
 
+const initialState = {
+    first_name: "",
+    last_name: "",
+    description: "",
+    email: "",
+    profession: ""
+}
 export default function ProfilePage(props) {
   const classes = useStyles();
   const { ...rest } = props;
@@ -46,13 +51,55 @@ export default function ProfilePage(props) {
     classes.imgFluid
   );
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+  const [userLoggedIn, setUserLoggedIn] = useState([]);
+  const userStorage = useState(localStorage.getItem('email'));
+  const [state, setState] = useState({ visible: false });
+  const showModal = () => {
+      setState({ visible: true })
+      localStorage.removeItem("email", userLoggedIn.email);
+
+  }
+
+  const handleClose = e => {
+      setState({ visible: false })
+  }
+
+  useEffect(() => {
+    AxiosWithAuth()
+    .get('https://mentor-be.herokuapp.com/api/mentor',{headers: {Authorization: localStorage.getItem('token')}})
+    .then(res => {
+      const currentUser = res.data.filter(user => (
+        user.email === userStorage[0])
+      )[0];
+      setUserLoggedIn(currentUser);
+    })
+    .catch(err => console.log(err.response))
+  }, [state]);
+
+  const handleChanges = e => {
+    setUserLoggedIn({...userLoggedIn, [e.target.name]: e.target.value})
+    localStorage.setItem("email", userLoggedIn.email);
+};
+
+const update = e => {
+    e.preventDefault()
+    AxiosWithAuth()
+    .put(`https://mentor-be.herokuapp.com/api/mentor/${userLoggedIn.id}`, userLoggedIn)
+    .then(res => {
+        localStorage.setItem("email", userLoggedIn.email);
+        setUserLoggedIn(res.data)
+        window.location.reload()
+    })
+    .catch(err => console.log(err))
+    handleClose()
+}
   return (
     <div>
       <MentorHeader />
       <Parallax
         small
         filter
-        image={require("../../assets/img/faces/christian.jpg")}
+        image={userLoggedIn.image}
       />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
@@ -61,11 +108,11 @@ export default function ProfilePage(props) {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.profile}>
                   <div>
-                    <img src={profile} alt="..." className={imageClasses} />
+                    <img src={userLoggedIn.image} alt="..." className={imageClasses} />
                   </div>
                   <div className={classes.name}>
-                    <h3 className={classes.title}> Christian Louboutin</h3>
-                    <h6>DESIGNER</h6>
+                    <h2 className={classes.title}> {userLoggedIn.first_name} {userLoggedIn.last_name}</h2>
+                    <h5>{userLoggedIn.profession}</h5>
                     <Button justIcon link className={classes.margin5}>
                       <i className={"fab fa-twitter"} />
                     </Button>
@@ -81,10 +128,7 @@ export default function ProfilePage(props) {
             </GridContainer>
             <div className={classes.description}>
               <p>
-                An artist of considerable range, Chet Faker — the name taken by
-                Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs
-                and records all of his own music, giving it a warm, intimate
-                feel with a solid groove structure.{" "}
+                {userLoggedIn.description}{" "}
               </p>
             </div>
             <GridContainer justify="center">
@@ -284,7 +328,65 @@ export default function ProfilePage(props) {
                 />
               </GridItem>
             </GridContainer>
-            <Button>Edit Profile</Button>
+            <Button onClick={showModal}>Edit Profile</Button>
+            <Modal
+                title='Edit Profile'
+                visible={state.visible}
+                onCancel={handleClose}
+                footer={[
+                    <>
+                        <Button key='back' type='primary' ghost onClick={update} >
+                            Close
+                        </Button>
+                    </>
+                ]}
+            >
+                     <div>
+            <form className={classes.root} noValidate autoComplete="off" onSubmit={update}>
+                <TextField 
+                    id="standard-basic" 
+                    name='first_name'
+                    label='First Name'
+                    onChange={handleChanges}
+                    value={userLoggedIn.first_name}
+                    defaultValue={userLoggedIn.first_name}
+                />
+                <TextField 
+                    id="standard-basic" 
+                    name='last_name'
+                    label='Last Name'
+                    onChange={handleChanges}
+                    value={userLoggedIn.last_name}
+                    defaultValue={userLoggedIn.last_name} 
+                />
+                <TextField 
+                    id="standard-basic" 
+                    name='profession'
+                    label='Profession'
+                    onChange={handleChanges} 
+                    value={userLoggedIn.profession}
+                    defaultValue={userLoggedIn.profession}
+                />
+                <TextField 
+                    id="standard-basic"
+                    name='email'
+                    label='Email'
+                    onChange={handleChanges} 
+                    value={userLoggedIn.email}
+                    defaultValue={userLoggedIn.email}
+                />
+                <TextField className={classes.roots}
+                    id="standard-textarea"
+                    label="Description"
+                    name='description'
+                    defaultValue={userLoggedIn.description}
+                    multiline
+                    onChange={handleChanges}
+                    value={userLoggedIn.description} 
+                    />
+            </form>
+             </div>
+            </Modal>
           </div>
         </div>
       </div>

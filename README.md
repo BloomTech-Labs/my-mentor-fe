@@ -31,17 +31,15 @@ Conecting mentore to recent graduates across disciplins for mentoring opportunit
 
 ### 4️⃣ Key Features
 
-- feature one
-- feature two
-- feature three
-- feature four
-- feature five
+- Secure login for both Mentor and Mentee
+- Search for Mentor based on profession, alma mater, and location
+- Allow Mentor and Mentee to message
 
 ## 1️⃣ Tech Stack
 
 ### Front end built using:
 
-#### _Front end framework goes here_
+#### React, Express, Postgree, Node
 
 🚫 Why did you choose this framework?
 

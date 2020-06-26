@@ -58,7 +58,19 @@ const profilePageStyle = {
   navWrapper: {
     margin: "20px auto 50px auto",
     textAlign: "center"
-  }
+  },
+  root: {
+    '& > *': {
+      margin: '10px',
+      width: '25ch',
+    },
+  },
+  roots: {
+    '& > *': {
+      margin: '10px',
+      width: '43ch',
+    },
+  },
 };
 
 export default profilePageStyle;
