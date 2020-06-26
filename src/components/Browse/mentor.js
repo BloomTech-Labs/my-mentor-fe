@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Modal, Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import "./browseMentor.css";
 
 const Mentor = (props) => {
@@ -8,17 +8,6 @@ const Mentor = (props) => {
 
   const handleClose = () => setModal(false);
   const handleShow = () => setModal(true);
-
-  // useEffect(() => {
-  //   axios
-  //     .get("https://mentor-be.herokuapp.com/api/mentor", {
-  //       headers: { Authorization: localStorage.getItem("token") },
-  //     })
-  //     .then((res) => {
-  //       const mentors = res.data.json();
-  //       setMentor(mentors);
-  //     });
-  // }, []);
 
   const renderModal = () => {
     return (
@@ -39,13 +28,23 @@ const Mentor = (props) => {
           </Modal>
         </>
         <div>
-          <Modal show={modal}>
+          <Modal show={modal} onHide={handleClose}>
             <Modal.Header closeButton onClick={handleClose}>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>{props.mentor.first_name}</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-              Woohoo, you're reading this text in a modal!
+              <Card style={{ width: "18rem" }}>
+                <Card.Img variant="top" src={props.mentor.image} />
+                <Card.Body>
+                  <Card.Text>{props.mentor.description}</Card.Text>
+                </Card.Body>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem>{props.mentor.title}</ListGroupItem>
+                  <ListGroupItem>{props.mentor.city}</ListGroupItem>
+                  <ListGroupItem>{props.mentor.state}</ListGroupItem>
+                </ListGroup>
+              </Card>
             </Modal.Body>
 
             <Modal.Footer>
