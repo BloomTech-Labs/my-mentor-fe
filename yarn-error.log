@@ -1,0 +1,105 @@
+Arguments: 
+  /home/cishocksr/.config/versions/node/v14.4.0/bin/node /home/cishocksr/.config/versions/node/v14.4.0/bin/yarn install
+
+PATH: 
+  /home/cishocksr/.config/versions/node/v14.4.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.4.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.29.tgz: Request failed "503 Service Unavailable"
+      at ResponseError.ExtendableBuiltin (/home/cishocksr/.config/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:696:66)
+      at new ResponseError (/home/cishocksr/.config/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:802:124)
+      at Request.<anonymous> (/home/cishocksr/.config/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:67057:16)
+      at Request.emit (events.js:315:20)
+      at Request.module.exports.Request.onRequestResponse (/home/cishocksr/.config/versions/node/v14.4.0/lib/node_modules/yarn/lib/cli.js:141625:10)
+      at ClientRequest.emit (events.js:315:20)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:639:27)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:117:17)
+      at HTTPParser.execute (<anonymous>)
+      at TLSSocket.socketOnData (_http_client.js:507:22)
+
+npm manifest: 
+  {
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+      "@material-ui/core": "^4.9.9",
+      "@material-ui/icons": "^4.9.1",
+      "@material/drawer": "^6.0.0",
+      "@testing-library/jest-dom": "^4.2.4",
+      "@testing-library/react": "^10.0.4",
+      "@testing-library/user-event": "^7.1.2",
+      "antd": "^4.1.3",
+      "axios": "^0.19.2",
+      "boostrap": "^2.0.0",
+      "history": "^4.10.1",
+      "material-ui-search-bar": "^1.0.0-beta.14",
+      "moment": "^2.24.0",
+      "node": "^13.12.0",
+      "node-sass": "^4.14.1",
+      "react": "^16.13.1",
+      "react-datetime": "^2.16.3",
+      "react-dom": "^16.13.1",
+      "react-inline-editing": "^1.0.10",
+      "react-redux": "^7.2.0",
+      "react-router-dom": "^5.1.2",
+      "react-scripts": "3.4.1",
+      "react-scroll-parallax": "^2.3.2",
+      "react-slick": "^0.25.2",
+      "react-swipeable-views": "^0.13.9",
+      "reactstrap": "^8.4.1",
+      "redux": "^4.0.5",
+      "redux-thunk": "^2.3.0",
+      "socket.io-client": "^2.3.0",
+      "stream-chat-react": "^1.1.2"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "coverage": "CI=true yarn test --coverage --watchAll=false || true"
+    },
+    "jest": {
+      "collectCoverageFrom": [
+        "**/*.js",
+        "!**/node_modules/**",
+        "!**/vendor/**",
+        "!**/__tests__/**"
+      ]
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "devDependencies": {
+      "react-test-renderer": "^16.13.1",
+      "redux-logger": "^3.0.6"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

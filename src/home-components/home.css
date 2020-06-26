@@ -1,0 +1,51 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.nav .logo {
+    padding-left: 20px;
+}
+.nav .nav-buttons {
+    display: flex;
+    padding-right: 20px;
+}
+.home-div{
+    width: 100%;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+}
+@media (max-width: 600px) {
+    .home-div {
+      background-color: lightblue;
+    }
+    .home-pic {
+        display: none;
+    }
+    .typewrite {
+        display: flex;
+    }
+   
+  }
+
+.home-header {
+    z-index: 1;
+    position: absolute;
+   top: 58%;
+   /* left: 28%; */
+   font-size: 3.3rem;
+}
+.typewrite{
+    background: -webkit-linear-gradient( right, rgb(56, 142, 255) , rgb(6, 21, 26));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+}
+.home-pic {
+    width: 100%;
+    position: relative;
+}
+
+.menuBar .menuCon {
+    padding-left: 120px;
+}
